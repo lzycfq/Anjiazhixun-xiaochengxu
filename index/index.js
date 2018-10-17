@@ -23,25 +23,8 @@ Page({
       hasUserInfo: true
     })
   },
-  formSousuo:function(e){
-    var that=this;
-    var formSousuo = that.data.formSousuo;//获取表单值
-    wx.request({
-      url:"",
-      method:'POST',
-      data:formSousuo,
-      success:function(res){
-       wx.showToast({
-         title: '提交成功',//titile：=alert
-         duration:2000
-       })
-       wx.navigateTo({
-         url: 'list/list',
-       })
-      }
-    })
-  },
-
+ 
+  
 // 图标模态框弹出
   show1: function () {
 
@@ -89,6 +72,58 @@ Page({
 
     this.setData({ flag4: true })
 
+  },
+
+  
+  // 搜索表单提交
+  formSousuo: function (e) {
+    var that = this;
+    that.setData({
+      showPage: true,
+    })
+
+    var sousuoname = e.detail.value.sousuoname;
+    console.log(sousuoname)
+    if (sousuoname=="") {
+      wx.showToast({
+        title: '请输入搜索内容',
+        duration: 1000,
+        icon: "none"
+      })
+      return;
+    } else {
+      wx.login({
+        success: function (lgres) {
+          wx.request({
+            url: '',
+            method: 'POST',
+            data: { "sousuoname": sousuoname },
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function (res) {
+              wx.showToast({
+                title: '信息提交成功',
+                duration: 1500,
+                icon: "none"
+              })
+              wx.navigateTo({
+                url: "list/list"
+              });
+            },
+            fail: function () {
+              title: "信息提交失败"
+            },
+            complete: function () {
+              that.setData({
+                showPage: false,
+              })
+            }
+          })
+        }
+      })
+
+    }
   },
 
   // 看房补贴表单提交

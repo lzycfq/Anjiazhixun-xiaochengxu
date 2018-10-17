@@ -64,7 +64,7 @@
 
 <!-- 楼盘介绍 -->
 <block wx:if="{{true}}">
-<view class='anjia-loupanjieshao' wx:for='{{loupanbt}}'  wx:key="loupanitem" wx:for-item="loupanbt"  wx:key="{{loupanbt.id}}">
+<view class='anjia-loupanjieshao' wx:for='{{loupanbt}}'  wx:key="loupanitem" wx:for-item="loupanbt"   wx:key="{{loupanbt.id}}">
 <view class='maidian-thought-1'>\r\t{{loupanbt.loupanbiaoti}}\t\r</view>
 <view class='anjia-wenzi'>{{loupanbt.loupanwenben}}</view>
 <view class='anjia-image'><image src='{{loupanbt.images}}'></image></view>

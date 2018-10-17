@@ -1,9 +1,10 @@
 {
   "pages": [
-      "show/show",
-      "ceshi/ceshi",
-    "list/list",
+    "show/show",
     "index/index",
+    "list/list",
+    
+    "ceshi/ceshi",
     "logs/logs"
   ],
   "window": {

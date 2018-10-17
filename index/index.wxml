@@ -218,10 +218,10 @@
 <!-- 购房特惠列表 -->
 
 <view class='tehui-border' wx:for="{{listtehui}}" wx:key="listtehui">
-<navigator url='/show/show?id{{item.shangpingID}}'>
+<navigator url='/show/show?id{{item.tehuiID}}'>
 <view class='tehui-img'>
 <image class='image-hide' src='{{item.image}}' ></image></view></navigator>
-<navigator url='/show/show?id{{item.shangpingID}}'>
+<navigator url='/show/show?id{{item.tehuiID}}'>
 <view class='tehui-wenzi'>
 <text class='biaoti'>{{item.biaoti}}</text>
 <view  class='ws'>参考价格:约<text class='ws-color'>{{item.price}}</text>元m²起</view>
