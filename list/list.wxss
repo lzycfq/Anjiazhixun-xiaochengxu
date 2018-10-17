@@ -1,0 +1,150 @@
+/**index.wxss**/
+button.form_button{background-color:transparent;padding:0;margin:0;display:inline;position:static;border:0;padding-left:0;padding-right:0;border-radius:0;font-size:0rpx;color:transparent;}
+ 
+ 
+button.form_button::after{content:'';width:0;height:0;-webkit-transform:scale(1);transform:scale(1);display:none;background-color:transparent;}
+.nav{
+  
+  width: 100%;
+  height:120rpx;
+  background: #F2F2F2;
+  
+}
+.nav .img-logo{
+  width: 270rpx;
+  height:85rpx;
+  position: relative;
+  top:18rpx;
+  left: 8rpx;
+}
+ .nav .nav-wenzi{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 2%;
+    font-family: 楷体;
+    font-style: italic;
+   position: relative;
+   top: -10rpx;
+ }
+ /* 筛选 */
+.clear{
+  clear: both;
+  overflow: hidden;
+}
+ 
+.tabTit{
+  height:90rpx;
+  line-height: 90rpx;
+  border-bottom: solid 1px #eee;
+  width: 750rpx;
+  z-index: 1;
+  background: #fff;
+  font-size:15px;
+  text-align: center;
+}
+.tabTit .active{
+  color:#e64340;
+  background: #fff;
+}
+ 
+.tabTit .active image{
+  transform: rotate(180deg);
+  background: none;
+}
+ 
+.tabTit image{
+  width:26rpx;
+  height:26rpx;
+  vertical-align: middle;
+  margin-left: 5px;
+ 
+}
+ 
+.tabLayer{
+  box-shadow: 0 5px 5px rgba(0,0,0,.15);
+  width:750rpx;
+  overflow: hidden;
+  position: fixed;
+  top:190rpx;
+  z-index: 1;
+  background: #fff;
+  padding-bottom: 40rpx;
+  border-bottom: solid 1px #eee;
+  text-align: center;
+}
+.tabLayer text{
+  width:210rpx;
+  height:60rpx;
+  line-height:60rpx;
+  float:left;
+  border: solid 1px #eee;
+  margin:20rpx 0 0 26rpx;
+  font-size:15px;
+}
+.tabLayer .active{
+  color:#e64340;
+  border-color:#e64340;
+  }
+ 
+.flex1 {
+    flex: 1;
+    overflow: hidden;
+    display: block;
+}
+ 
+/*弹性盒模型*/
+.box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+ 
+navigator{
+  display:inline;
+}
+
+.list .list_item{
+ 
+  padding:10px;
+  height:242rpx;
+  border-bottom:1px solid #E8E8E8;
+}
+.biaoti{
+ 
+  color: #9D2927;
+}
+.btn{
+  display: inline-flex;
+  width: 133rpx;
+  height: 45rpx;
+  font-size: 20rpx;
+}
+.list .list_item .img{
+  width: 42%;
+  height: 235rpx;
+   overflow: hidden;
+   float: left;
+}
+.list .list_item .img image{
+   width:100%;
+   height:100%;
+}
+ .publicinfo{
+   overflow: hidden; /*自动隐藏文字*/
+text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+white-space: nowrap;/*强制不换行*/
+ }
+.list .list_item .info{
+  width:56%;
+float: right;
+  height: 235rpx;
+font-size: 28rpx;
+line-height:48rpx;
+ 
+  position:relative;
+  overflow: hidden; /*自动隐藏文字*/
+text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+white-space: nowrap;/*强制不换行*/
+  
+}

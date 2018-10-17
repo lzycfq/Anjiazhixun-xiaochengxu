@@ -1,0 +1,226 @@
+<!--show/show.wxml-->
+<!-- 轮播开始 -->
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+<block wx:for="{{images}}" wx:key="lunboitem">
+<swiper-item>            
+<image src="{{item.picurl}}" class="slide-image" mode="aspectFill"/> 
+        
+         <!-- <image src="image/erweima.png" class="slide-image" mode="aspectFill"/>  -->
+ </swiper-item>
+  </block>      
+  </swiper>
+  <!-- 轮播结束 -->
+<!-- 标题+按钮+广告 -->
+
+<view class='anjia-bag'>
+<view class="anjia-border">
+<view wx:for='{{bt}}' wx:for-item="bt" wx:for-index="index"  wx:key="{{bt.id}}"><label class='anjia-nr-title' >{{bt.biaotiname}}</label><button class='buttons'>{{bt.button1}}</button><button class='buttons'>{{bt.button2}}</button><button class='buttons'>{{bt.button3}}</button>
+<view class='fx'  catchtap='show4' ><image bind:tap="eventDraw"  src='image/share.png'></image></view>
+</view>   
+ <swiper class='c' indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="true">
+  <block wx:for="{{guanggao}}" wx:key="item">
+    <swiper-item>
+      <text class="itme_text">{{item.listwenzi}}</text>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
+</view>
+
+<!-- 
+分享到朋友圈弹窗 -->
+<view class="modal-box-1" hidden="{{flag4}}">
+    <view class="modal-body-2">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">分享到朋友圈<label class='knowBtn' bindtap="hide4">x</label></view>
+      <view class="modal-content">
+<canvas class='canvasstyle' canvas-id="myCanvas"></canvas>
+ 
+<view class='ft'>保存图片到手机相册，分享到朋友圈</view>
+<view style="text-align:center;padding-bottom:20px"><button  bindtap='eventSave' type="primary" size='mini'>保存到相册</button></view>
+</view>
+
+    </view>
+  </view>
+<!-- 视频 -->
+<view>
+  <view class="shiping" wx:for="{{items}}" wx:key="{{unique}}">
+    <view class="video-container">
+        <view  class="video" data-id="{{item.id}}" bindtap="videoPlay" >
+          <video wx:if="{{curr_id == item.id}}" id="myVideo" style="height: calc(9 * 730rpx / 16);" id="myVideo" src="{{item.video}}"
+          poster="{{item.poster}}"  objectFit="cover"  controls></video>
+          <view wx:else >
+              <image class="model-img" style="height: calc(9 * 750rpx / 16);" mode="aspectFill" src="{{item.poster}}"></image>
+              <view class="model-btn">
+                      <view class="play-icon"></view>
+                </view>
+          </view>
+        </view>
+    </view>
+  </view>
+  </view>
+<!-- 视频结束 -->
+
+<!-- 楼盘介绍 -->
+<block wx:if="{{true}}">
+<view class='anjia-loupanjieshao' wx:for='{{loupanbt}}'  wx:key="loupanitem" wx:for-item="loupanbt"  wx:key="{{loupanbt.id}}">
+<view class='maidian-thought-1'>\r\t{{loupanbt.loupanbiaoti}}\t\r</view>
+<view class='anjia-wenzi'>{{loupanbt.loupanwenben}}</view>
+<view class='anjia-image'><image src='{{loupanbt.images}}'></image></view>
+</view>
+</block>
+
+ <!-- 楼盘介绍结束 -->
+ <!-- 探头 -->
+<block wx:if="{{true}}"> 
+<view class='tantou'>
+<view class='tantou-xinxi'>
+<button class='tantou-lejie'><navigator url="">现在预约，抢额外购优惠房！
+</navigator></button>
+<button class='tantou-bodas' catchtap='phone'>马上拨打</button>
+</view>
+<view class='tantou-xinxi'>
+<form bindsubmit="yuyueSubmit">
+<input type="number"  class="yuyuephone" name="yuyuephone" placeholder="输入您电话" id="yuyuephone"  maxlength="11" bindinput='blurPhone'/>
+<button form-type='submit' class='yuyuebtn'>确定</button>
+</form>
+</view>
+</view>
+</block>
+<!-- 户型查看 -->
+<view class='huxingall'>
+<block wx:if="{{true}}">
+<swiper class="swiper-huxing" autoplay="true" interval="5000" 
+
+duration="1000" current="{{swiperCurrent}}" bindchange="swiperChange">
+<block wx:for="{{anjiahuxing}}" wx:key="item">
+<swiper-item>            
+<view class='anjia-table'>
+<view class='table-nr'>
+<view class='left'>
+<view class='table-wenzi'>类型：{{item.leixing}}</view>
+<view class='table-wenzi'>房型：{{item.fangxing}}</view>
+<view class='table-wenzi'>面积：{{item.mianji}}</view>
+</view>
+<view class='right'>
+<view class='table-wenzi'>特点：{{item.tedian1}}</view>
+<view class='table-wenzi'>特点：{{item.tedian2}}</view>
+<view class='table-wenzi'>特点：{{item.tedian3}}</view>
+</view>
+</view>
+</view>
+<view class='anjia-tables'><image src='{{item.images}}'></image></view>
+ </swiper-item>
+  </block>      
+  </swiper>
+  </block>        
+<view class='swiper-left' bindchange="swiperChange"><image src='image/left-pc.png'></image></view>
+<view class='swiper-right' bindchange="swiperChange"><image src='image/right-pc.png'></image></view>
+<!-- </block> -->
+</view>
+<!-- 拨打电话 -->
+<view class='bd'>
+<button class='tantou-lejie'><navigator url="">现在预约，抢额外购优惠房！
+</navigator></button>
+<button class='tantou-bodas' catchtap='phone'>马上拨打</button>
+</view>
+
+<!-- footer -->
+<view class='footer'>
+<view class='anjia-anniu'><image bindtap='show1' src='image/icon-butie.png'></image></view>
+<view class='anjia-anniu' ><image bindtap='show2' src='image/icon-zixun.png'></image></view>
+<view class='anjia-anniu'><image bindtap='show3' src='image/icon-huxing.png'></image></view>
+<view class='anjia-boda' catchtap='phone'><image src='image/icon-boda.png'></image><view class='boda-wenben'>免费拨打电话</view></view>
+
+</view>
+
+<!-- 弹出框内容 -->
+<view class="modal-box" hidden="{{flag1}}">
+    <view class="modal-body">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">看房补贴<label class='knowBtn' 
+
+bindtap="hide1">x</label></view>
+      <view class="modal-content">
+         <form  bindsubmit='formKanfang'>
+          <view class='huanhang'><label class='label-name'>电话：</label><input 
+
+type="number"  class="input-kanfang" name="kanfangphone" placeholder="输入您电话" 
+
+id="maifang-phone"  maxlength="11" bindinput='blurPhone'/></view>
+  <view class='huanhang'><label class='label-name'>姓名：</label><input type="text" 
+
+class="input-kanfang" name="kanfangname" placeholder="必填" />
+        <radio-group class="radio-group" bindchange="radioChange">
+         <label class='label-name'><radio name="sex"  value='男' color='#fff' 
+
+checked='checked'></radio><label class='radio-nr'>男</label></label>
+<label class='label-name'><radio name="sex"  value='女' ></radio><label class='radio-nr'>
+
+女</label></label>
+      </radio-group>
+  </view>
+  <view class='label-name'>看房补贴：50元看房现金红包</view>
+ <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补
+
+贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
+<view><button form-type='submit' class='kanfangbutton'>确定</button></view>
+         </form>
+         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='kanfanghongbao'>领取看房专属补贴！</view>
+     </view>
+    </view>
+  </view>
+
+<!-- 留言弹出框内容 -->
+<view class="modal-box" hidden="{{flag2}}">
+    <view class="modal-body">
+     <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">留言咨询<label class='knowBtn' 
+
+bindtap="hide2">x</label></view>
+      <view class="modal-content">
+         <form  bindsubmit='maifangzhushou'>
+          <view class='huanhang'><label class='label-name'>电话：</label><input 
+
+type="number"  class="input-kanfang" name="maifangzhushouphone" placeholder="输入您电话" 
+
+id="maifang-phone"  maxlength="11" bindinput='blurPhone'/></view>
+   <view class='huanhang'><label class='label-name'>咨询内容：</label><textarea 
+
+name="maifangcontent" class='maifangcontent'></textarea></view>
+ <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补
+
+贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
+
+<view><button form-type='submit' class='kanfangbutton'>确定</button></view>
+         </form>
+         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='kanfanghongbao'>领取看房专属补贴！</view>
+     </view>
+    </view>
+  </view>
+
+
+<view class="modal-box" hidden="{{flag3}}">
+    <view class="modal-body-1">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">产品：公寓,户型：1房1厅<label class='knowBtn' 
+
+bindtap="hide3">x</label></view>
+    <swiper class="swiper-huxing"  autoplay="true" interval="5000" duration="1000">
+    <!-- wx:for="{{anniuhuxing}}" wx:key="item" -->
+<block>
+<swiper-item>            
+       <view class="modal-content-1">
+        <view class='huxingtedian'>户型面积:85m²</view>
+        <view class='huxingtedian'>户型特点:产品：公寓,户型：1房1厅</view>
+        <image class='huxing-img' src='image/ceshi.jpg' mode="aspectFill"></image>
+     </view>
+ </swiper-item>
+  </block>      
+  </swiper>
+  </view>
+  </view>
+  

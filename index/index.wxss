@@ -1,0 +1,525 @@
+/**index.wxss**/
+button.form_button{background-color:transparent;padding:0;margin:0;display:inline;position:static;border:0;padding-left:0;padding-right:0;border-radius:0;font-size:0rpx;color:transparent;}
+ 
+ 
+button.form_button::after{content:'';width:0;height:0;-webkit-transform:scale(1);transform:scale(1);display:none;background-color:transparent;}
+.nav{
+  
+  width: 100%;
+  height:120rpx;
+  background: #F2F2F2;
+  
+}
+.nav .img-logo{
+  width: 270rpx;
+  height:85rpx;
+  position: relative;
+  top:18rpx;
+  left: 8rpx;
+}
+ .nav .nav-wenzi{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 2%;
+    font-family: 楷体;
+    font-style: italic;
+   position: relative;
+   top: -10rpx;
+ }
+ /* 轮播css */
+ .swiper {
+  width: 100%;
+  height: calc(9 * 750rpx / 16);
+  
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+/* .plate{
+  height:105rpx;
+  width: 715rpx;
+ 
+  overflow: hidden;
+  margin: 0 auto;
+}
+.plate-item{
+  display: flex;
+  float:left;
+  position: relative;
+  width: 155rpx;
+  height:80rpx;
+  margin-top: 23rpx;
+ 
+}
+.plate-items{
+margin-left: 32rpx;
+}
+.plate-items{
+float: right;
+}
+.plate-img image{
+  width: 155rpx;
+  height: 80rpx;
+} */
+
+.plate{
+  height:105rpx;
+}
+.plate-item{
+  display: flex;
+  float:left;
+  position: relative;
+  width: 155rpx;
+  height:80rpx;
+  margin-top: 23rpx;
+  margin-left: 27rpx;
+}
+.plate-img image{
+  width: 155rpx;
+  height: 80rpx;
+}
+
+.dsearch{
+  width:95%;
+  height: 100rpx;
+ 
+  margin: 0 auto;
+}
+
+.dingwei{
+  float: left;
+  width: 220rpx;
+  line-height: 90rpx;
+  overflow: hidden;
+}
+.cityname{
+float: left;
+font-size: 28rpx;
+}
+.cityborder{
+font-size: 28rpx;
+float: left;
+width: 120rpx;
+height: 60rpx;
+line-height:60rpx;
+ position: relative;
+  top:18rpx;
+text-align: center;
+  border: gainsboro 1px solid;
+}
+ .xia-pc{
+  width: 30rpx;
+  height: 20rpx;
+  position: relative;
+ 
+
+  margin-left: 2rpx;
+}
+
+.sousuo{
+  line-height: 90rpx;
+  float: right;
+  width: 490rpx;}
+  
+#loupanlousuo{
+  height: 65rpx;
+  width: 289rpx;
+  font-size: 25rpx;
+  float: left;
+  line-height: 90rpx;
+  position: relative;
+  top:18rpx;
+  	box-sizing: border-box;
+
+ text-indent: 2px;
+  border: gainsboro 1px solid;
+}
+.loupansearfch{
+  font-size: 28rpx;
+  float: left;  
+  
+}
+.suosuoajax{
+  width: 115rpx;
+  height: 65rpx;
+  box-sizing: border-box;
+  font-size: 25rpx;
+ float: right;
+  margin-left: 2rpx;
+  position: relative;
+  color: white;
+  top:18rpx;  
+  background:#9D2927;
+}
+/* 图标模态框 */
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+   z-index:10000;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  }
+
+.modal-body{
+  position:relative; 
+  background: white;
+  height:750rpx;
+  width: 95%; 
+  top:250rpx;
+  z-index:10000;
+  margin: 0 auto;}
+
+
+.header-modal{
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  background: #9D2927;
+  color: white;
+  line-height: 70rpx;
+}
+.knowBtn{
+  float: right;
+  margin-right: 10rpx;
+  font-size: 50rpx;
+  position: relative;
+  top: -6rpx;
+}
+.modal-content{
+  width: 85%;
+  margin: 0 auto;
+  height:auto; 
+}
+.modal-content-1{
+  width: 98%;
+  margin: 0 auto;
+  height:auto; 
+}
+.modal-content .fenxiang{
+  width: 100%;
+  height: 40%;
+}
+.huanhang{
+ display: inline-flex;
+ float: left;
+}
+.label-name{
+  float: left;
+  font-size: 25rpx;
+  margin: 10rpx 0;
+}
+.input-kanfang{
+  border: gainsboro 1px solid;
+  width: 350rpx;
+  height: 30rpx;
+  font-size: 25rpx;
+  float: left;
+  margin-top:10rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 12rpx; 
+   height: 12rpx; 
+   text-align: center;
+   font-size:0rpx; /* 对勾大小 去掉 */
+   background-color: #9D2927; 
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+radio{
+  position: relative;
+ 
+margin-left: 5rpx;
+  border-radius: 50%;
+  width:30rpx;/* 最好是4的倍数，不然会不在中间 */
+  height: 30rpx;
+  border: 2rpx solid #666;/* 设置边框（外圆） */
+  font-size: 0;/* 让边框重合 */
+}
+.radio-nr{
+  position: relative;
+top: 5px;
+}
+.radio{
+  position: relative;
+  top: -10rpx;
+margin-left: 10rpx;
+  border-radius: 50%;
+  width:30rpx;/* 最好是4的倍数，不然会不在中间 */
+  height: 30rpx;
+  border: 2rpx solid #666;/* 设置边框（外圆） */
+  font-size: 0;/* 让边框重合 */
+}
+
+radio .wx-radio-input{
+   border-radius: 50%;
+   width: 30rpx;
+   height: 30rpx; 
+   border: none;/* 替换边框（隐藏原有边框） */
+}
+.kanfangbutton{
+  width: 100%;
+  height: 60rpx;
+font-size: 26rpx;
+background: #9D2927;
+color: white;
+}
+.erweima{
+  width: 250rpx;
+  height: 250rpx;
+ margin: 0 auto;
+}
+.erweima .nr{
+   width: 250rpx;
+  height: 250rpx;
+}
+.kanfanghongbao{
+  width: 230rpx;
+ 
+  font-size: 25rpx;
+  margin: 0 auto;
+}
+/* 买房助手 */
+.maifangcontent{
+  width: 303rpx;
+  height: 150rpx;
+  font-size: 25rpx;
+  position: relative;
+  top: 5rpx;
+  border: gainsboro 1px solid;
+}
+/* 买房咨询 */
+.zixunall{
+  display: inline-flex;
+}
+.input-xizun{
+  position: relative;
+  top: 5rpx;
+  width:563rpx;
+  height: 40rpx;
+  font-size: 25rpx;
+  border: gainsboro 1px solid;
+}
+.zixunleft{
+  width:100rpx;
+  height: auto;
+  float: left;
+  font-size: 25rpx;
+ 
+}
+.zixunright{
+  width:587rpx;
+  height: auto;
+  float: right;
+  font-size: 25rpx;
+ 
+}
+.label-name-1{
+  font-size:35rpx;
+}
+.cityinput{
+  width: 150rpx;
+  height: 40rpx;
+  border: gainsboro 1px solid;
+  display:inline-flex;
+}
+.cityother{
+  width: 515rpx;
+  height: 40rpx;
+  display:inline-flex;  
+  border: gainsboro 1px solid;
+ 
+}
+/*热销楼盘*/
+.rexiao{
+	position: relative;
+    top:0.3em;
+	width:95%;
+	height: auto;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.rexiao .rexiao-bg{
+	width: 100%;
+	height:80rpx;
+	background: -webkit-linear-gradient(left, #dc2b1b , #f7bd01); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #dc2b1b , #f7bd01); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #dc2b1b , #f7bd01); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #dc2b1b , #f7bd01); /* 标准的语法（必须放在最后） */
+}
+.rexiao .rexiao-bg .tuijian-neirong{
+	width:95%;
+	height: 80rpx;
+	line-height: 80rpx;
+	margin: 0 auto;
+	margin-top: 0.1rem;
+	}
+.rexiao .rexiao-bg .tuijian-neirong .rexiao-img{
+	width:50rpx;
+  height:70rpx;
+	position: relative;
+  top:2rpx;
+}
+.rexiao .rexiao-bg .tuijian-neirong span{
+	color: white;
+	position: relative;
+  top:-2rpx;
+	margin-left: 3px;
+	font-size:30rpx;
+}
+.rexiao .rexiao-bg .tuijian-neirong .aw{
+	color: white;
+float: right;
+    position: relative;
+   
+	font-size:30rpx;
+
+}
+
+.rexiao .rexiao-bg .tuijian-neirong .aw image{
+	width: 20rpx;
+  height: 28rpx;
+	position: relative;
+    margin-left: 3px;
+    top: 3rpx;
+}
+/* 热销楼盘列表 */
+.loupan-border{
+   position: relative;
+  top: 20rpx;
+  width: 95%;
+  height:245rpx;
+ 
+ 
+  margin: 0 auto;
+  border-bottom: gainsboro 1px solid;
+}
+.biaoti{
+  color: #9D2927;
+}
+.rexiao-img{
+  width: 42%;
+  height: 237rpx;
+   overflow: hidden;
+   float: left;
+}
+.image-hide{
+ width: 100%;
+ height: 100%;
+}
+.rexiao-wenzi{
+  width:56%;
+float: right;
+  height: 237rpx;
+
+line-height:49rpx;
+
+}
+.buttons{
+  width: 133rpx;
+  height: 40rpx;
+ display: inline-flex;
+  font-size: 18rpx;
+  line-height: 40rpx;
+ 
+}
+.ws{
+   overflow:hidden; 
+ text-overflow:ellipsis;
+ white-space:nowrap;
+  font-size: 26rpx;
+}
+.ws-color{
+  color: #9D2927;
+  font-size: 28rpx;
+}
+
+/* 特惠楼盘列表 */
+.tehui-border{
+  position: relative;
+  top: 20rpx;
+  width: 95%;
+  height:320rpx;
+  margin: 0 auto;
+  border-bottom: gainsboro 1px solid;
+  overflow: hidden;
+}
+.biaoti{
+  color: #9D2927;
+}
+.tehui-img{
+   position: relative;
+  top: 5rpx;
+  width: 42%;
+  height: 308rpx;
+   overflow: hidden;
+   float: left;
+}
+.image-hide{
+ width: 100%;
+ height: 100%;
+}
+.tehui-wenzi{
+  width:56%;
+float: right;
+line-height:47rpx;
+  height:320rpx;
+
+}
+
+.ws{
+   overflow:hidden; 
+ text-overflow:ellipsis;
+ white-space:nowrap;
+  font-size: 26rpx;
+}
+.ws-color{
+  color: #9D2927;
+  font-size: 28rpx;
+}
+/* 了解更多和拨打电话 */
+.boda-button{
+  position: relative;
+ top: 30rpx;
+ bottom: 20rpx;
+  width: 95%;
+  height: 120rpx;
+  margin: 0 auto;
+}
+.lejie{
+  width: 74%;
+  height: 80rpx;
+  float: left;
+  background: #9D2927;
+  color: white;
+  line-height: 80rpx;
+  font-size: 27rpx;
+}
+.boda{
+  width: 25%;
+  height: 80rpx;
+  float: right;
+  background: #9D2927;
+  color: white;
+  line-height: 80rpx;
+  
+  font-size: 27rpx;
+}
+/* 底部 */
+.footer{
+  width: 100%;
+  font-size: 22rpx;
+  text-align: center;
+  height:140rpx;
+  color: white;
+  background:#336799;
+}
+.footer-nr{
+  position: relative;
+  top: 20rpx;
+}

@@ -1,0 +1,643 @@
+/* show/show.wxss */
+/* 轮播css */
+/* 轮播css */
+ /* 轮播css */
+
+
+
+.canvasshuju{
+  width:750rpx; height:250rpx;
+   border:1px red solid;}
+ .swiper {
+  height: 950rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+/* 文本标题 */
+.anjia-bag{
+  width: 100%;
+  height: 130rpx;
+  background: #f2f2f2
+}
+.anjia-bag .anjia-border{
+  width: 97%;
+  height:100rpx;
+  position: relative;
+ 
+  float: right;
+
+}
+.anjia-bag .anjia-border .anjia-nr-title{
+  color:#9D2927;
+  font-size: 45rpx;
+  position: relative;
+  top: 5rpx;
+}
+.anjia-bag .anjia-border  .buttons{
+  display: inline-flex;
+  width: 157rpx;
+  height: 50rpx;
+  font-size: 25rpx;
+  line-height: 50rpx;
+  margin-left: 5rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+  background: #9bcadd;
+}
+.anjia-bag .anjia-border .fx {
+ float: right;
+  width: 60rpx;
+  height: 50rpx;
+  font-size: 20rpx;
+  line-height: 50rpx;
+  position: relative;
+  top: 20rpx;
+  border-top-left-radius:25rpx;
+   border-top-right-radius:0rpx;
+   border-bottom-right-radius:0rpx;
+  border-bottom-left-radius:25rpx;
+  background: #dedede;
+}
+.anjia-bag .anjia-border .fx image{
+  width: 60rpx;
+  height: 40rpx;
+  position: relative;
+  top: 5rpx;
+ 
+}
+.anjia-bag .anjia-border .c {
+ width: 98%;
+ position: relative;
+ top: 10rpx;
+ overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+ 
+.anjia-bag .anjia-border .itme_text {
+  font-size: 25rpx;
+ width: 100%;  
+  color: black;
+  display: inline-block;
+  z-index: 999;
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+/* canvas绘制css */
+.canvasstyle{
+  position: relative;
+   top: 50rpx;
+  margin:0 auto;
+   margin-bottom:80rpx;
+   width: 240px; 
+   height: 360px;
+   box-shadow:1px 2px 2px #ccc;
+   
+}
+.ft{
+  text-align: center;
+}
+/* 视频 */
+
+.video{
+  top: 20rpx;
+  width: 95%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 20rpx;
+}
+#myVideo{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.model-img{
+    width: 100%;
+    margin: 0 auto;
+  
+}
+.model-btn{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width:100rpx;
+    height:100rpx;
+    border-radius:50%;
+    background-color: rgba(0,0,0,.3);
+}
+.play-icon{
+    margin:28rpx 42rpx;
+    border-top:26rpx solid transparent;
+    border-left:36rpx solid #fff;
+    border-bottom:22rpx solid transparent;
+}
+
+
+/* 
+楼盘介绍 */
+.anjia-loupanjieshao{
+  width: 95%;
+  margin: 0 auto;
+  
+  position: relative;
+ top: 15rpx;
+  margin-bottom: 30rpx;
+}
+
+.anjia-loupanjieshao .maidian-thought-1{
+	display: table;
+	width: 100%;
+	line-height: 32px;
+  font-weight:bold;
+  color: #9D2927;
+	font-size:40rpx;
+	white-space: nowrap;
+	
+}
+ .anjia-loupanjieshao .maidian-thought-1:before,
+ .anjia-loupanjieshao .maidian-thought-1:after{
+	display: table-cell;
+	content: '';
+	width: 50%;
+	background: -webkit-linear-gradient(#9D2927,#9D2927) repeat-x left center;
+	background: linear-gradient(#9D2927,#9D2927) repeat-x left center;
+	background-size: 2px 2px;
+}
+.anjia-wenzi{
+  width: 85%;
+  margin: 0 auto;
+  line-height: 37rpx;
+  font-size: 28rpx;
+  height: auto;
+  margin-top: 23rpx;
+  margin-bottom: 30rpx;
+}
+.anjia-image{
+  width: 100%;
+  height: calc(9 * 730rpx / 16);
+}
+.anjia-image image{
+width: 100%;
+height: calc(9 * 730rpx / 16);
+  
+}
+/* 按钮探头 */
+.tantou{
+  width:95%;
+  height: 190rpx;
+ 
+  margin: 0 auto;
+  overflow: hidden;
+}
+.tantou .tantou-xinxi{
+ width:100%;
+  height:65rpx;
+}
+.tantou .tantou-xinxi .tantou-lejie{
+width:70%;
+height: 75rpx;
+background: #9D2927;
+color: white;
+float: left;
+font-size: 28rpx;
+border-radius: 0px;
+ box-sizing: border-box;
+}
+.tantou .tantou-xinxi .tantou-bodas{
+  width:29%;
+height: 75rpx;
+float: right;
+background: #9D2927;
+color: white;
+border-radius: 0px;
+font-size: 28rpx;
+ box-sizing: border-box;
+}
+
+.tantou .tantou-xinxi form .yuyuephone{
+  width: 70%;
+  height: 75rpx;
+  float: left;
+   box-sizing: border-box;
+font-size: 28rpx;  
+text-indent: 5px;
+position: relative;
+top: 13rpx;
+ border: 1px gainsboro solid;
+}
+.tantou .tantou-xinxi form .yuyuebtn{
+  width: 29%;
+  height: 75rpx;
+float: right;
+background: #9D2927;
+font-size: 28rpx;
+border-radius: 0px;
+position: relative;
+top: -7rpx;
+ box-sizing: border-box;
+color: white;
+}
+/* 结束 */
+/* 户型查看 */
+
+.huxingall{
+  width: 95%;
+  height: auto;
+  overflow: hidden;
+margin: 0 auto;
+  
+}
+.swiper-huxing{
+  width: 100%;
+  height: 860rpx;
+margin: 0 auto;
+  position: relative;
+  top: 15rpx;
+}
+.anjia-table{
+  width: 100%;
+  height: 240rpx;
+  background-size: 100%;
+  background-image: url('http://www.anjiazhixun.com/img/icon/border-PC.png');
+}
+.anjia-table .table-nr{
+  width: 90%;
+  margin: 0 auto;
+  height: 180rpx;
+ position: relative;
+  top: 23rpx;
+  
+}
+.anjia-table .table-nr .left{
+  width: 45%;
+  height:170rpx;
+  
+  float: left;
+   margin-top: 10rpx;
+   line-height:58rpx;
+   overflow: hidden;
+}
+.anjia-table .table-nr .left  .table-wenzi{
+  font-size: 35rpx;
+ 
+}
+
+.anjia-table .table-nr .right{
+  width: 53%;
+ height:170rpx;
+   margin-top: 10rpx;
+   line-height:58rpx;
+   overflow: hidden;
+  float: right;
+}
+.anjia-table .table-nr .right  .table-wenzi{
+  font-size: 35rpx;
+
+}
+.anjia-tables{
+  width: 100%;
+  height: 610rpx;
+  overflow: hidden
+}
+.anjia-tables image{
+ width: 100%;
+  height: 710rpx;
+  overflow: hidden
+}
+.huxingall .swiper-left{
+  width: 40rpx;
+  height: 40rpx;
+ 
+  position: relative;
+  padding: 0;
+  top:-320rpx;
+  left: 20rpx;
+  border: 0;
+  float: left;
+  background: transparent;
+}
+.swiper-left image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.swiper-right{
+ width: 40rpx;
+  height: 40rpx;
+  
+  position: relative;
+  padding: 0;
+  top:-320rpx;
+ right: 20rpx;
+  border: 0;
+  float: right;
+  background: transparent;
+  
+}
+.swiper-right image{
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 拨打 */
+.bd{
+  width: 95%;
+  height: 225rpx;
+  margin: 0 auto;
+}
+.bd .tantou-lejie{
+width:70%;
+height: 75rpx;
+background: #9D2927;
+color: white;
+float: left;
+border-radius: 0rpx;
+font-size: 28rpx;
+ box-sizing: border-box;
+}
+.bd .tantou-bodas{
+  width:29%;
+height: 75rpx;
+float: right;
+background: #9D2927;
+color: white;
+font-size: 28rpx;
+border-radius: 0px;
+ box-sizing: border-box;
+}
+/* footer */
+.footer{
+  
+  z-index: 9999;
+    position: fixed;
+    bottom: 0rpx; 
+    width:100%;
+    height:110rpx;  
+    color:#fff;
+    background: #e9e9e9;
+    
+}
+.anjia-anniu{
+  width: 140rpx;
+  height: 100%;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+}
+.anjia-boda{
+  width: 330rpx;
+  height: 100%;
+  float: left;
+  background: #9D2927;
+}
+
+
+.anjia-anniu image{
+  position:relative;
+  top:10rpx;
+width:90rpx;
+height:80%;
+}
+.anjia-boda image{
+  position:relative;
+  top:20rpx;
+  left: 25rpx;
+width:67rpx;
+height:65%;
+}
+.boda-wenben{
+  font-size: 30rpx;
+  display: inline-flex;
+  position: relative;
+  left: 20rpx;
+}
+/* 底部弹窗 */
+/* 图标模态框 */
+.modal-box{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+ z-index: 1500;
+  overflow: hidden;
+ 
+  }
+.modal-box-1{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+ z-index: 1500;
+  overflow: hidden;
+ background: rgba(0,0,0,0.3)
+  }
+.modal-body{
+  position:relative; 
+  background: white;
+  height:750rpx;
+  width:100%; 
+  top:347rpx;
+  overflow: hidden;
+  margin: 0 auto;}
+.modal-body-2{
+    position:relative; 
+  background: white;
+  height:100%;
+  width:100%; 
+  
+  margin: 0 auto;
+}
+/* 分享朋友圈 */
+.modal-content .share-image {
+
+  width: 100%;
+  height: 868rpx;
+  margin-top: 20rpx;
+  border: 1px solid black;
+}
+
+button {
+  margin-top: 20rpx;
+  background: #9D2927;
+  color: white;
+}
+/* 结束 */
+.modal-body-1{
+    position:relative; 
+  background: white;
+  height:830rpx;
+  width:100%; 
+  top:262rpx;
+  margin: 0 auto;
+}
+.header-modal{
+  width: 100%;
+  height: 70rpx;
+  text-align: center;
+  background: #9D2927;
+  color: white;
+  line-height: 70rpx;
+}
+.knowBtn{
+  float: right;
+  margin-right: 10rpx;
+  font-size: 50rpx;
+  position: relative;
+  top: -6rpx;
+}
+.modal-content{
+  width: 85%;
+  margin: 0 auto;
+  height:auto; 
+}
+.modal-content-1{
+  width: 98%;
+  margin: 0 auto;
+  height:auto; 
+}
+.modal-content .fenxiang{
+  width: 100%;
+  height: 40%;
+}
+.huanhang{
+ display: inline-flex;
+ float: left;
+}
+.label-name{
+  float: left;
+  font-size: 25rpx;
+  margin: 10rpx 0;
+}
+.input-kanfang{
+  border: gainsboro 1px solid;
+  width: 350rpx;
+  height: 30rpx;
+  font-size: 25rpx;
+  float: left;
+  margin-top:10rpx;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 12rpx; 
+   height: 12rpx; 
+   text-align: center;
+   font-size:0rpx; /* 对勾大小 去掉 */
+   background-color: #9D2927; 
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+radio{
+  position: relative;
+ 
+margin-left: 5rpx;
+  border-radius: 50%;
+  width:30rpx;/* 最好是4的倍数，不然会不在中间 */
+  height: 30rpx;
+  border: 2rpx solid #666;/* 设置边框（外圆） */
+  font-size: 0;/* 让边框重合 */
+}
+.radio-nr{
+  position: relative;
+top: 5px;
+}
+.radio{
+  position: relative;
+  top: -10rpx;
+margin-left: 10rpx;
+  border-radius: 50%;
+  width:30rpx;/* 最好是4的倍数，不然会不在中间 */
+  height: 30rpx;
+  border: 2rpx solid #666;/* 设置边框（外圆） */
+  font-size: 0;/* 让边框重合 */
+}
+
+radio .wx-radio-input{
+   border-radius: 50%;
+   width: 30rpx;
+   height: 30rpx; 
+   border: none;/* 替换边框（隐藏原有边框） */
+}
+.kanfangbutton{
+  width: 100%;
+  height: 60rpx;
+font-size: 26rpx;
+background: #9D2927;
+color: white;
+}
+.erweima{
+  width: 250rpx;
+  height: 250rpx;
+ margin: 0 auto;
+}
+.erweima .nr{
+   width: 250rpx;
+  height: 250rpx;
+}
+.kanfanghongbao{
+  width: 230rpx;
+ 
+  font-size: 25rpx;
+  margin: 0 auto;
+}
+/* 买房助手 */
+.maifangcontent{
+  width: 303rpx;
+  height: 150rpx;
+  font-size: 25rpx;
+  position: relative;
+  top: 5rpx;
+  border: gainsboro 1px solid;
+}
+/* 买房咨询 */
+.zixunall{
+  display: inline-flex;
+}
+.input-xizun{
+  position: relative;
+  top: 5rpx;
+  width:563rpx;
+  height: 40rpx;
+  font-size: 25rpx;
+  border: gainsboro 1px solid;
+}
+.zixunleft{
+  width:100rpx;
+  height: auto;
+  float: left;
+  font-size: 25rpx;
+ 
+}
+.zixunright{
+  width:587rpx;
+  height: auto;
+  float: right;
+  font-size: 25rpx;
+ 
+}
+.label-name-1{
+  font-size:35rpx;
+}
+.cityinput{
+  width: 150rpx;
+  height: 40rpx;
+  border: gainsboro 1px solid;
+  display:inline-flex;
+}
+.cityother{
+  width: 515rpx;
+  height: 40rpx;
+  display:inline-flex;  
+  border: gainsboro 1px solid;
+ 
+}
+.huxing-img{
+  width: 100%;
+  height: 650rpx;
+}

@@ -1,0 +1,249 @@
+<!--index.wxml-->
+<!-- 头部 -->
+  <view class='nav'>
+  <image src='image/LOGO.PNG'  class='img-logo'></image>
+  <text class='nav-wenzi'>官方直售，抢先挑好房</text>
+  </view>
+  <!-- 头部结束 -->
+  <!-- 轮播 -->
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+<block wx:for="{{images}}" wx:key="item">
+<swiper-item>            
+<image src="{{item.picurl}}" class="slide-image" mode="aspectFill"/>         
+ </swiper-item>
+  </block>      
+  </swiper>
+  <!-- 图标导航 -->
+  
+<view class="plate">
+  <view  open-type="switchTab" hover-class="other-navigator-hover" class="plate-item">
+     <view class="plate-img" bindtap='show1'>
+   <image src="image/icon-butie.png"></image>
+       </view>     
+  </view>
+  <view  open-type="switchTab" hover-class="other-navigator-hover" class="plate-item plate-items">
+     <view class="plate-img" bindtap='show2'>
+       <image src="image/icon-libao.png"></image>
+       </view>
+
+  </view>
+  <view  hover-class="navigator-hover" class="plate-item plate-items">
+     <view class="plate-img" bindtap='show3'>
+     <image src="image/icon-zhushou.png"></image>
+       </view>
+       
+       
+  </view>
+  <view  hover-class="navigator-hover" class="plate-item plate-items plate-itemss">
+     <view class="plate-img" bindtap='show4'>
+      <image src="image/icon-zixun.png"></image>
+       </view>
+  </view>
+</view>
+<!-- 图标导航结束 -->
+
+<!-- 弹出框内容 -->
+<view class="modal-box" hidden="{{flag}}">
+    <view class="modal-body">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">看房补贴<label class='knowBtn' bindtap="hide1">x</label></view>
+      <view class="modal-content">
+         <form  bindsubmit='formKanfang'>
+          <view class='huanhang'><label class='label-name'>电话：</label><input type="number"  class="input-kanfang" name="kanfangphone" placeholder="输入您电话" id="maifang-phone"  maxlength="11" bindinput='blurPhone'/></view>
+  <view class='huanhang'><label class='label-name'>姓名：</label><input type="text" class="input-kanfang" name="kanfangname" placeholder="必填" />
+        <radio-group class="radio-group" bindchange="radioChange">
+         <label class='label-name'><radio name="sex"  value='男' color='#fff' checked='checked'></radio><label class='radio-nr'>男</label></label>
+<label class='label-name'><radio name="sex"  value='女' ></radio><label class='radio-nr'>女</label></label>
+      </radio-group>
+  </view>
+  <view class='label-name'>看房补贴：50元看房现金红包</view>
+ <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
+<view><button form-type='submit' class='kanfangbutton'>确定</button></view>
+         </form>
+         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='kanfanghongbao'>领取看房专属补贴！</view>
+     </view>
+    </view>
+  </view>
+
+<!-- 购房礼包弹出框内容 -->
+<view class="modal-box" hidden="{{flag2}}">
+    <view class="modal-body">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">购房礼包<label class='knowBtn' bindtap="hide2">x</label></view>
+      <view class="modal-content">
+         <form  bindsubmit='goufanglibao'>
+          <view class='huanhang'><label class='label-name'>电话：</label><input type="number"  class="input-kanfang" name="goufangphone" placeholder="输入您电话" id="maifang-phone"  maxlength="11" bindinput='blurPhone'/></view>
+  <view class='label-name'>购房补贴：价值800元购房礼包</view>
+ <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
+<view><button form-type='submit' class='kanfangbutton'>确定</button></view>
+         </form>
+         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='kanfanghongbao'>领取看房专属补贴！</view>
+     </view>
+    </view>
+  </view>
+
+
+<!-- 买房弹出框内容 -->
+<view class="modal-box" hidden="{{flag3}}">
+    <view class="modal-body">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">买房助手<label class='knowBtn' bindtap="hide3">x</label></view>
+      <view class="modal-content">
+         <form  bindsubmit='maifangzhushou'>
+          <view class='huanhang'><label class='label-name'>电话：</label><input type="number"  class="input-kanfang" name="maifangzhushouphone" placeholder="输入您电话" id="maifang-phone"  maxlength="11" bindinput='blurPhone'/></view>
+   <view class='huanhang'><label class='label-name'>咨询内容：</label><textarea name="maifangcontent" class='maifangcontent'></textarea></view>
+ <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
+
+<view><button form-type='submit' class='kanfangbutton'>确定</button></view>
+         </form>
+         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='kanfanghongbao'>领取看房专属补贴！</view>
+     </view>
+    </view>
+  </view>
+
+
+
+<!-- 买房咨询弹出框内容 -->
+<view class="modal-box" hidden="{{flag4}}">
+    <view class="modal-body">
+      <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
+      <view class="header-modal">买房咨询<label class='knowBtn' bindtap="hide4">x</label></view>
+      <view class="modal-content-1">
+         <form  bindsubmit='maifangzixun'>
+          <view class='huanhang'><label class='label-name-1'>电话：</label><input type="number"  class="input-xizun" name="maifangzixunphone" placeholder="输入您电话" id="maifang-phone"  maxlength="11" bindinput='blurPhone'/></view>
+   <!-- <view class='huanhang'><label class='label-name'>咨询内容：</label><textarea name="maifangcontent" class='maifangcontent'></textarea></view>
+ <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view> -->
+<view class='zixunall'>
+<view class='zixunleft'>购房需求</view>
+<view class='zixunright'>
+<view class='huanhang'>
+<label class='label-name'>城市:<input type='text' name="city" class='cityinput'/></label>
+<label class='label-name'>楼盘:<input type='text' name="loupan" class='cityinput'/></label>
+</view>
+<view class='huanhang'><label class='label-name'>类型:</label>
+<radio-group class="radio-group" bindchange="radioChange" name="sex">
+         <label class='label-name'><radio name="sex" class="radio"  value='洋房' color='#fff'></radio>洋房</label>
+        <label class='label-name'><radio name="sex" class="radio"  value='公寓' ></radio>公寓</label>
+          <label class='label-name'><radio name="sex"  class="radio" value='写字楼' color='#fff' checked='checked'></radio>写字楼      </label>
+        <label class='label-name'><radio name="sex" class="radio"  value='商铺' ></radio>商铺</label>
+        <label class='label-name'><radio name="sex" class="radio"  value='别墅' ></radio>别墅</label> 
+      </radio-group>
+</view>
+<view class='huanhang'><label class='label-name'>楼盘:</label>
+<radio-group class="radio-group" bindchange="radioChange" name="fang">
+         <label class='label-name'><radio name="fang" class="radio"  value='一房' color='#fff'></radio>一房</label>
+        <label class='label-name'><radio name="fang" class="radio"  value='二房' ></radio>二房</label>
+          <label class='label-name'><radio name="fang"  class="radio" value='三房' color='#fff' checked='checked'></radio>三房      </label>
+        <label class='label-name'><radio name="fang" class="radio"  value="四房" ></radio>四房</label>
+        <label class='label-name'><radio name="fang" class="radio"  value='五房' ></radio>五房</label> 
+      </radio-group>
+</view>
+<view class='huanhang'>
+<label class='label-name'>单价:<input type='text' name="price" class='cityinput'/>元m²</label>
+<label class='label-name'>总价:<input type='text' name="cotunt" class='cityinput'/>万元</label>
+</view>
+<view class='huanhang'><label class='label-name'>特色:</label>
+<radio-group class="radio-group" bindchange="radioChange" name="jsfang">
+         <label class='label-name'><radio name="jsfang" class="radio"  value='精装修' color='#fff'></radio>精装修</label>
+        <label class='label-name'><radio name="jsfang" class="radio"  value='地铁' ></radio>地铁</label>
+          <label class='label-name'><radio name="jsfang"  class="radio" value='教育' color='#fff' checked='checked'></radio>教育      </label>
+        <label class='label-name'><radio name="jsfang" class="radio"  value="环境" ></radio>环境</label>
+        <label class='label-name'><radio name="jsfang" class="radio"  value='现房' ></radio>现房</label> 
+      </radio-group>
+     
+</view>
+<view class='huanhang'>
+<label class='label-name'>其他:<input type='text' name="other" class='cityother' placeholder='咨询其他内容'/></label>
+</view> 
+<view><label class='label-name'>温馨提示：请正确填写您的姓名和手机号码，点击确定后，非晚间时间23：00-次日7：00，我们一小时内有专人跟您联系</label></view>
+</view>
+</view>
+
+<view><button form-type='submit' class='kanfangbutton'>确定</button></view>
+         </form>
+         
+     </view>
+    </view>
+  </view>
+
+
+<!-- 定位+搜索 -->
+<view class='dsearch'>
+
+<form id='sousuo' bindsubmit='formSousuo'>
+<view class='dingwei'><label  class='cityname'>城市：</label><span class="cityborder">{{currentCity}}<image class='xia-pc' src="image/xia-PC.png"></image></span></view>
+<view class='sousuo'><label class='loupansearfch'>搜索：</label><input type='text' placeholder='输入搜索内容' name="sousuoname" id='loupanlousuo' />
+<button form-type='submit' class='suosuoajax'>确定</button>
+</view>
+</form>
+</view>
+<!-- 热销楼盘 -->
+<view class="rexiao">
+				<view class="rexiao-bg">
+					<view class="tuijian-neirong"><a style="float: left;"><image class='rexiao-img' src="image/icon-rexiaoloupan.png"></image> <span>热销楼盘  </span></a>
+						<a class="aw" href="">更多楼盘<image src="image/youjiantou-PC.png"></image></a></view>
+				</view>
+			</view>
+<!-- 热销楼盘 -->
+<view class='loupan-border' wx:for="{{list}}" wx:key="list">
+<navigator url='/show/show?id{{item.shangpingID}}'>
+<view class='rexiao-img'>
+<text class='biaoti'>{{item.biaoti}}</text>
+<image class='image-hide' src='{{item.image}}'></image></view></navigator>
+<navigator url='/show/show?id{{item.shangpingID}}'>
+<view class='rexiao-wenzi'>
+<view class='button'><button class='buttons'>{{item.buttonone}}</button><button class='buttons'>{{item.buttontwo}}</button><button class='buttons'>{{item.buttonthree}}</button></view>
+<view  class='ws'>参考价格:约<text class='ws-color'>{{item.price}}</text>元m²起</view>
+<view  class='ws'>楼盘位置:{{item.position}}</view>
+<view  class='ws'>销售产品:{{item.product}}</view>
+<view  class='ws'>户型面积:{{item.measure}}</view>
+</view>
+</navigator>
+</view> 
+<!-- 了解更多 -->
+<view class='boda-button'>
+<button class='lejie'>想要了解更多楼盘和优惠信息？</button>
+<button catchtap='phone' class='boda'>马上咨询</button>
+</view>
+<!-- 购房特惠 -->
+ <view class="rexiao">
+				<view class="rexiao-bg">
+					<view class="tuijian-neirong"><a style="float: left;"><image class='rexiao-img' src="image/icon-tehui.png" style='position:relative;top:8rpx;'></image> <span>热销楼盘  </span></a>
+						<a class="aw" href="">更多楼盘<image src="image/youjiantou-PC.png"></image></a></view>
+				</view>
+			</view>
+<!-- 购房特惠列表 -->
+
+<view class='tehui-border' wx:for="{{listtehui}}" wx:key="listtehui">
+<navigator url='/show/show?id{{item.shangpingID}}'>
+<view class='tehui-img'>
+<image class='image-hide' src='{{item.image}}' ></image></view></navigator>
+<navigator url='/show/show?id{{item.shangpingID}}'>
+<view class='tehui-wenzi'>
+<text class='biaoti'>{{item.biaoti}}</text>
+<view  class='ws'>参考价格:约<text class='ws-color'>{{item.price}}</text>元m²起</view>
+<view  class='ws'>楼盘名称:{{item.loupanname}}</view>
+<view  class='ws'>楼盘地址:{{item.position}}</view>
+<view  class='ws'>户型特点:{{item.tedian}}</view>
+<view  class='ws'><text style='color:white;'>户型特点:</text>{{item.tedian}}</view>
+<view  class='ws'><text style='color:white;'>户型特点:</text>{{item.tedian}}</view>
+</view>
+</navigator>
+</view> 
+
+<!-- 了解更多 -->
+<view class='boda-button'>
+<button class='lejie'>想要了解更多楼盘和优惠信息？</button>
+<button bindtap='phone' class='boda'>马上咨询</button>
+</view>
+
+<view class='footer'>
+<view class='footer-nr'>
+<view>东莞市家讯网络科技有限公司 地址：东莞市·南城区第一国际百安中心C座5F</view>
+<view>热线：0769-22881901 邮箱：anjiazhixun@163.com </view>
+<view>Copyright2018  www.anjiazhixun.com 版权所有 粤ICP备18107357号-1</view>
+</view>
+</view>
