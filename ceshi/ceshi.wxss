@@ -1,1 +1,15 @@
-/* ceshi/ceshi.wxss */
+.bg_black {
+
+  height: 200rpx;
+
+  background: lightskyblue;
+
+}
+
+.bg_red {
+
+  height: 200rpx;
+
+  background: lightpink;
+
+}/* ceshi/ceshi.wxss */

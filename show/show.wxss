@@ -143,6 +143,13 @@ white-space: nowrap;
 
 /* 
 楼盘介绍 */
+.LBall{
+  width: 95%;
+  height: auto;
+  border:dashed;
+  margin: 0 auto;
+}
+
 .anjia-loupanjieshao{
   width: 95%;
   margin: 0 auto;

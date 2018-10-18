@@ -4,8 +4,6 @@
 <block wx:for="{{images}}" wx:key="lunboitem">
 <swiper-item>            
 <image src="{{item.picurl}}" class="slide-image" mode="aspectFill"/> 
-        
-         <!-- <image src="image/erweima.png" class="slide-image" mode="aspectFill"/>  -->
  </swiper-item>
   </block>      
   </swiper>
@@ -63,18 +61,21 @@
 <!-- 视频结束 -->
 
 <!-- 楼盘介绍 -->
-<block wx:if="{{true}}">
-<view class='anjia-loupanjieshao' wx:for='{{loupanbt}}'  wx:key="loupanitem" wx:for-item="loupanbt"   wx:key="{{loupanbt.id}}">
+
+<view class='LBall' >
+<!-- 楼盘商品介绍 -->
+<!-- <view wx:if="{{boolean==false}}"> -->
+<block  wx:for='{{loupanbt}}'  wx:key="loupanitem" data-loupanID="{{loupanbt.loupanbtID}}" wx:for-item="loupanbt"   wx:key="{{loupanbt.id}}">
+<view class='anjia-loupanjieshao'>
 <view class='maidian-thought-1'>\r\t{{loupanbt.loupanbiaoti}}\t\r</view>
 <view class='anjia-wenzi'>{{loupanbt.loupanwenben}}</view>
 <view class='anjia-image'><image src='{{loupanbt.images}}'></image></view>
 </view>
-</block>
 
- <!-- 楼盘介绍结束 -->
- <!-- 探头 -->
-<block wx:if="{{true}}"> 
-<view class='tantou'>
+<!-- </view> -->
+<!-- 预约拨打电话 -->
+<!-- <block wx:elif="{{boolean==true}}"> -->
+<view class='tantou' wx:for='{{tantou}}' data-loupanID="{{loupanbt.tantouID}}">
 <view class='tantou-xinxi'>
 <button class='tantou-lejie'><navigator url="">现在预约，抢额外购优惠房！
 </navigator></button>
@@ -88,6 +89,9 @@
 </view>
 </view>
 </block>
+</view>
+
+
 <!-- 户型查看 -->
 <view class='huxingall'>
 <block wx:if="{{true}}">

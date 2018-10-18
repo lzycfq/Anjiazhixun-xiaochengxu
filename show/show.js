@@ -1,6 +1,7 @@
 var app = getApp()
 Page({
   data: {
+    boolean: false,
     flag1: true,
     flag2: true,
     flag3: true,
@@ -15,18 +16,10 @@ Page({
       avatarUrl: "",//用户头像
       nickName: "",//用户昵称
     },
- 
+    tantou:[0]
   },
 
-  onReady: function () {  //创建视频上下文对象
-    this.videoContext = wx.createVideoContext('myVideo')
-  },
-  videoPlay(e) {
-    this.setData({
-      curr_id: e.currentTarget.dataset.id,
-    })
-    this.videoContext.play()
-  },
+  
 
 
 
@@ -366,10 +359,22 @@ Page({
       },
       //成功后的回调
       success: function (res) {
-        console.log('11111' + res),
+       console.log(res)
+        var status = res.data.loupanbt.loupanbtID;
+        if (status == 1) {
           that.setData({
-          loupanbt: res.data
+            loupanbt: res.data
           })
+          return;          
+        }else if(status==2){
+          var boda = that.data.tantou.concat(1);
+          that.setData({
+            tantou: boda
+          })
+          return;
+          
+        }
+          
       }
     })
     // 查看户型
@@ -401,8 +406,6 @@ Page({
         key: 'mallName',
         desc: 'descName',
         shopId: 'id'
-        
-
 
       },
       header: {
@@ -514,10 +517,9 @@ onReady:function(){
 
   onShareAppMessage: function (res) {
     console.log(this.data.bt[0].biaotiname)
-    console.log(this.data.loupanbt[0].loupanwenben)
+ 
     return {
       title: this.data.bt[0].biaotiname,
-      desc: this.data.loupanbt[0].loupanwenben,
       path: '/pages/show/show?shopId=' + this.data.id,
       success: function (res) {
         // 分享成功
