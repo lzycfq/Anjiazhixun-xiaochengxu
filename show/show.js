@@ -16,7 +16,7 @@ Page({
       avatarUrl: "",//用户头像
       nickName: "",//用户昵称
     },
-    tantou:[0]
+  
   },
 
   
@@ -359,19 +359,19 @@ Page({
       },
       //成功后的回调
       success: function (res) {
-       console.log(res)
-        var status = res.data.loupanbt.loupanbtID;
-        if (status == 1) {
+        console.log("52"+res)
+        var status = that.data.loupanbt.loupanbtID;
+        var status = that.data.tantou.tantouID;
+        if (status == 1) { //假设这json有loupanbt.loupanbtID参数
           that.setData({
-            loupanbt: res.data
+            loupanbt: res.data,//生成div  
           })
-          return;          
-        }else if(status==2){
-          var boda = that.data.tantou.concat(1);
-          that.setData({
-            tantou: boda
-          })
-          return;
+        } else if (status == 2) { //假设这json有tantou.tantouID参数
+          let boda = that.data.loupanbt[tantou].concat(1);//小程序端自动增加一个静态div
+           that.setData({
+             tantou:boda//生成div
+           })
+         
           
         }
           

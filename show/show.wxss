@@ -398,7 +398,7 @@ border-radius: 0px;
   overflow: hidden;
 }
 .anjia-boda{
-  width: 330rpx;
+  width: 331rpx;
   height: 100%;
   float: left;
   background: #9D2927;
