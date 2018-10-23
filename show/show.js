@@ -16,7 +16,9 @@ Page({
       avatarUrl: "",//用户头像
       nickName: "",//用户昵称
     },
-
+    anjiahuxing:{
+      leftpc:"image/left-PC.png"
+    }
   
   },
 
@@ -37,10 +39,7 @@ Page({
       swiperCurrent: e.detail.current
     })
   },
-  //轮播图点击事件
-  swipclick: function (e) {
-    console.log(this.data.swiperCurrent)
-  },
+
 
 
  
@@ -328,6 +327,7 @@ Page({
           })
       }
     })
+    //视频加载
     var that = this
 
     //网络请求 GET方法
@@ -387,15 +387,14 @@ Page({
       }
     })
     // 按钮查看户型
+    //shopid为分享给我朋友连接后缀标识
     var that = this
     var sid = options.shopId;
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/anniuhuxing.json',
+      url: 'http://192.168.1.103/json/tedian.json',
       method: 'GET',
       data: {
-        key: 'mallName',
-        desc: 'descName',
         shopId: 'id'
 
       },
@@ -432,78 +431,78 @@ Page({
     })
   },
      
-// onReady:function(){
-//     // 绘制canvas
-//     var that = this;
-//     //1. 请求后端API生成小程序码
-//     //that.getQr();
+onReady:function(){
+    // 绘制canvas
+    var that = this;
+    //1. 请求后端API生成小程序码
+    //that.getQr();
 
-//     //2. canvas绘制文字和图片
-//     const ctx = wx.createCanvasContext('myCanvas');
-//     var title = that.data.bt[0].biaotiname;
-//     var desc_1 = that.data.loupanbt[0].loupanwenben;
-//     var imgPath = that.data.loupanbt[1].images; //商品图标  
-//     var basicprofile = '/image/LOGO-1.jpg'; //安家直讯logo
-//   // var xcxcode = that.data.qrcodeurl; //小程序分享码
-//     var xcxcode = 'image/bg.jpg'; //小程序分享码
-//     //填充背景
-//     ctx.setFillStyle('#cccccc');
-//     ctx.fillRect(0, 0, 240, 360);
-//     ctx.setFillStyle('#ffffff');
-//     ctx.fillRect(1, 1, 238, 358);
+    //2. canvas绘制文字和图片
+    const ctx = wx.createCanvasContext('myCanvas');
+    var title = that.data.bt[0].biaotiname;//标题
+    var desc_1 = that.data.loupan[0].loupanwenben;//文本介绍
+    var imgPath = that.data.loupan[1].images; //商品图标  
+    var basicprofile = '/image/LOGO-1.jpg'; //安家直讯logo
+  // var xcxcode = that.data.qrcodeurl; //小程序分享码
+    var xcxcode = '/image/bg.jpg'; //小程序分享码
+    //填充背景
+    ctx.setFillStyle('#cccccc');
+    ctx.fillRect(0, 0, 240, 360);
+    ctx.setFillStyle('#ffffff');
+    ctx.fillRect(1, 1, 238, 358);
 
-//     //绘制产品图
-//     ctx.drawImage(imgPath, 2, 2, 236, 200);
+    //绘制产品图
+    ctx.drawImage(imgPath, 2, 2, 236, 200);
 
-//     //绘制标题
-//     ctx.setFontSize(16);
-//     ctx.setFillStyle('#000000');
-//     ctx.fillText(title, 10, 225);
+    //绘制标题
+    ctx.setFontSize(16);
+    ctx.setFillStyle('#000000');
+    ctx.fillText(title, 10, 225);
 
-//     //绘制介绍产品
-//     ctx.setFontSize(12);
-//     ctx.setFillStyle('#6F6F6F');
-//     ctx.fillText(desc_1, 10, 250);
-//     ctx.fillText('安家直讯，为你抢先挑好房！', 10, 270);
+    //绘制介绍产品
+    ctx.setFontSize(12);
+    ctx.setFillStyle('#6F6F6F');
+    ctx.fillText(desc_1, 10, 250);
+    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 270);
 
-//     //绘制一条虚线
+    //绘制一条虚线
 
-//     ctx.strokeStyle = 'blue';
-//     ctx.beginPath();
-//     ctx.setLineWidth(1);
-//     ctx.setLineDash([2, 4]);
-//     ctx.moveTo(10, 285);
-//     ctx.lineTo(235, 285);
-//     ctx.stroke();
+    ctx.strokeStyle = 'blue';
+    ctx.beginPath();
+    ctx.setLineWidth(1);
+    ctx.setLineDash([2, 4]);
+    ctx.moveTo(10, 285);
+    ctx.lineTo(235, 285);
+    ctx.stroke();
 
-//     //安家直讯图标
-//     ctx.drawImage(basicprofile, 10, 310, 30, 30);
+    //安家直讯图标
+    ctx.drawImage(basicprofile, 10, 310, 30, 30);
 
-//     //绘制介绍
-//     ctx.setFontSize(11);
-//     ctx.setFillStyle('#aaaaaa');
-//     ctx.fillText('长按扫码查看详情', 47, 318);
-//     ctx.fillText('分享自安家直讯', 47, 338);
-//     ctx.drawImage(xcxcode, 165, 295, 60, 60);
+    //绘制介绍
+    ctx.setFontSize(11);
+    ctx.setFillStyle('#aaaaaa');
+    ctx.fillText('长按扫码查看详情', 47, 318);
+    ctx.fillText('分享自安家直讯', 47, 338);
+    ctx.drawImage(xcxcode, 165, 295, 60, 60);
 
-//     ctx.draw();
+    ctx.draw();
 
 
 
-//   },
+  },
 
-//   eventSave: function () {
-//     wx.saveImageToPhotosAlbum({
-//       filePath: this.data.shareImage,
-//       success(res) {
-//         wx.showToast({
-//           title: '保存图片成功',
-//           icon: 'success',
-//           duration: 2000
-//         })
-//       }
-//     })
-// },
+  eventSave: function () {
+    wx.saveImageToPhotosAlbum({
+      filePath: this.data.shareImage,
+      success(res) {
+        wx.showToast({
+          title: '保存图片成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
+},
 
 
   onShareAppMessage: function (res) {

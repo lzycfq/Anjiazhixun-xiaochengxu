@@ -46,7 +46,8 @@
   overflow: hidden;
 text-overflow:ellipsis;
 white-space: nowrap;
-  background: #9bcadd;
+color: black;
+ 
 }
 .anjia-bag .anjia-border .fx {
  float: right;
@@ -248,7 +249,8 @@ background: #9D2927;
 font-size: 28rpx;
 border-radius: 0px;
 position: relative;
-top: -7rpx;
+top: 13rpx;
+
  box-sizing: border-box;
 color: white;
 }
@@ -469,11 +471,7 @@ height:65%;
   border: 1px solid black;
 }
 
-button {
-  margin-top: 20rpx;
-  background: #9D2927;
-  color: white;
-}
+
 /* 结束 */
 .modal-body-1{
     position:relative; 
