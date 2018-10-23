@@ -62,33 +62,43 @@
 
 <!-- 楼盘介绍 -->
 
-<view class='LBall' >
-<!-- 楼盘商品介绍 -->
-<!-- <view wx:if="{{boolean==false}}"> -->
-<block  wx:for='{{loupanbt}}'  data-loupanID="{{loupanbt.loupanbtID}}" wx:for-item="loupanbt"   wx:key="{{loupanbt.id}}">
+<view class='LBall'  wx:for='{{loupan}}' wx:for-item="loupan"   wx:key="{{loupan.index}}">
+<!-- 1:楼盘商品介绍 -->
+<block wx:if='{{loupan.type == 1}}'>
 <view class='anjia-loupanjieshao'>
-<view class='maidian-thought-1'>\r\t{{loupanbt.loupanbiaoti}}\t\r</view>
-<view class='anjia-wenzi'>{{loupanbt.loupanwenben}}</view>
-<view class='anjia-image'><image src='{{loupanbt.images}}'></image></view>
+<view class='maidian-thought-1'>\r\t{{loupan.loupanbiaoti}}\t\r</view>
+<view class='anjia-wenzi'>{{loupan.loupanwenben}}</view>
+<view class='anjia-image'><image src='{{loupan.images}}'></image></view>
 </view>
-
-<!-- </view> -->
-<!-- 预约拨打电话 -->
-<!-- <block wx:elif="{{boolean==true}}"> -->
-<view class='tantou' wx:for='{{loupanbt[tantou]}}' data-tantouID="{{tantou.tantouID}}" >
+</block>
+<view class='tantou' wx:elif='{{loupan.type == 2}}'>
 <view class='tantou-xinxi'>
-<button class='tantou-lejie'><navigator url="">现在预约，抢额外购优惠房！
+<button class='tantou-lejie'><navigator url="">{{loupan.lejie}}
 </navigator></button>
-<button class='tantou-bodas' catchtap='phone'>马上拨打</button>
+<button class='tantou-bodas' catchtap='phone'>{{loupan.yuyue}}</button>
 </view>
 <view class='tantou-xinxi'>
 <form bindsubmit="yuyueSubmit">
 <input type="number"  class="yuyuephone" name="yuyuephone" placeholder="输入您电话" id="yuyuephone"  maxlength="11" bindinput='blurPhone'/>
-<button form-type='submit' class='yuyuebtn'>确定</button>
+<button form-type='submit' class='yuyuebtn'>{{loupan.boda}}</button>
 </form>
 </view>
 </view>
-</block>
+
+<!-- <view class='tantou' wx:elif='{{loupan.type == 2}}'>
+<view class='tantou-xinxi'>
+<button class='tantou-lejie'><navigator url="">了解更多
+</navigator></button>
+<button class='tantou-bodas' catchtap='phone'>马上预约</button>
+</view>
+<view class='tantou-xinxi'>
+<form bindsubmit="yuyueSubmit">
+<input type="number"  class="yuyuephone" name="yuyuephone" placeholder="输入您电话" id="yuyuephone"  maxlength="11" bindinput='blurPhone'/>
+<button form-type='submit' class='yuyuebtn'>拨打</button>
+</form>
+</view>
+</view> -->
+
 </view>
 
 

@@ -146,12 +146,12 @@ white-space: nowrap;
 .LBall{
   width: 95%;
   height: auto;
-  border:dashed;
+ 
   margin: 0 auto;
 }
 
 .anjia-loupanjieshao{
-  width: 95%;
+  width:100%;
   margin: 0 auto;
   
   position: relative;
@@ -198,7 +198,7 @@ height: calc(9 * 730rpx / 16);
 }
 /* 按钮探头 */
 .tantou{
-  width:95%;
+  width:100%;
   height: 190rpx;
  
   margin: 0 auto;
