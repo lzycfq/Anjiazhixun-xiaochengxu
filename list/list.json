@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "安家直讯-楼盘搜索",
   "navigationBarBackgroundColor": "white",
-  "enablePullDownRefresh": true,
+"enablePullDownRefresh": true,
+"onPullDownRefresh": true,
+"onReachBottom": true,
   "navigationBarTextStyle": "black"
 }

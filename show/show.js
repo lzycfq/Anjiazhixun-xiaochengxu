@@ -16,9 +16,7 @@ Page({
       avatarUrl: "",//用户头像
       nickName: "",//用户昵称
     },
-    anjiahuxing:{
-      leftpc:"image/left-PC.png"
-    }
+    
   
   },
 

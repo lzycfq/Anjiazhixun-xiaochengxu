@@ -188,7 +188,7 @@
 				</view>
 			</view>
 <!-- 热销楼盘 -->
-<view class='loupan-border' wx:for="{{list}}" wx:key="list">
+<view class='loupan-border' wx:for="{{list}}" wx:key="list"  wx:if="{{index<3}}">
 <navigator url='/show/show?id{{item.shangpingID}}'>
 <view class='rexiao-img'>
 <text class='biaoti'>{{item.biaoti}}</text>
@@ -217,7 +217,7 @@
 			</view>
 <!-- 购房特惠列表 -->
 
-<view class='tehui-border' wx:for="{{listtehui}}" wx:key="listtehui">
+<view class='tehui-border' wx:for="{{listtehui}}" wx:key="listtehui"  wx:if="{{index<3}}">
 <navigator url='/show/show?id{{item.tehuiID}}'>
 <view class='tehui-img'>
 <image class='image-hide' src='{{item.image}}' ></image></view></navigator>

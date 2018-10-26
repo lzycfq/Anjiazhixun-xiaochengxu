@@ -1,4 +1,4 @@
-var app = getApp()
+
 var page=0;
 Page({
   data: {
@@ -11,30 +11,85 @@ Page({
     jiage_txt: '',
     xiaoliang_id: 0,//销量
     xiaoliang_txt: '',
-    articles:[]
+    articles:[],
+    pageNumber:1,
+    pageSize:5
   },
+// onLoad:function(){
+//   var that=this
+//   that.loadarticles();
+// },
+// loadarticles:function(res){
+// var that=this
+// //获取分页信息
+//   var pageNumber = that.data.pageNumber;
+//   var pageSize = that.data.pageSize;
+//   wx:wx.request({
+//     url: 'http://192.168.1.104/json/shuju.json',
+//     data:{
+//       "pageNumber": pageNumber,"pageSize": pageSize
+//     },
+//     header: {
+//       'content-type': 'application/json'
+//     },
+//     method: 'GET',
+//     success: function(res) {
+//       console.log(res)
+//       if(res.resultCode==200){
+//     var articles = that.data.articles
+//     var reqarticles = res.resarticles
+//     if (reqarticles.length==0){
+//         wx.showToast({
+//           title: '没有更多数据',
+//           duration:1000
+//         });
+//       //分页失败
+//       if(pageNumber>1){
+//         that.setData({
+//           pageNumber:--pageNumber
+//         });
+//       }
+//       return
+//     }
+//     that.setData({
+//       articles: articles.concat(reqarticles)
+//     });
+//   }else{
+//     wx:wx.showToast({
+//       title: '加载数据失败',
+//       duration: 1000,
+//     });
+//     if(pageNumber> 1){
+//     that.setData({
+//     pageNumber: --pageNumber
+//   });
+// }
+//   }
+//   console.log(res)
+    
+//     }
+//   })
+// },
+// //下拉刷新
+//   onPullDownRefresh: function () {
+//     var that = this;
+//     //下拉刷新，将pageNumber和pageSize分别设置成1和5，并初始化数据，让数据重新通过loadRoom()获取
+//     that.setData({
+//       pageNumber: 1,
+//       pageSize: 5,
+//       articles: []
+//     })
+//     that.loadRooms();
+//     wx.stopPullDownRefresh();
+//   },
+
+
+  //默认加载数据
   onLoad: function (options) {
     this.clearCache();//清本页缓存
     this.getArticles(0);//第一次加载数据
-    var that = this;
-    wx.request({
-      url: 'http://192.168.1.103/json/shuju-1.json',
-      method: 'post',
-      headers: {
-        'Content-Type': 'json'
-      },
-      success: function (res) {
-        console.log(res);
-       
-        that.setData({   
-          articles: res.data
-        })
-
-      }
-
-    })
   },
-  // 下拉刷新
+  // 下拉刷新加载更多
   onPullDownRefresh: function () {
     this.clearCache();
     this.getArticles(0);//第一次加载数据
@@ -49,18 +104,15 @@ Page({
   clearCache: function () {
     page = 0;//分页标识归零
     this.setData({
-      dataList: [] //文章列表数组清空
+      articles: [] //文章列表数组清空
     });
   },
- //点击列表跳转
-  onArticle:function(){
 
-  },
   getArticles: function (pg) {
     //设置默认值
     pg = pg ? pg : 0;
     var that = this;
-    var apiUrl = 'http://192.168.1.103/json/shuju.json';//文章列表接口地址
+    var apiUrl = 'http://192.168.1.104/json/shuju.json';//文章列表接口地址
     var postData = {
       page: pg,//分页标识
       app_version: 1.2,//当前版本，后台根据版本不同给出不同的数据格式
@@ -68,28 +120,20 @@ Page({
     wx.request({
       url: apiUrl,
       data: postData,
-      method: 'POST',
+      method: 'get',
       header: { 'content-type': 'application/json' },
       success: function (res) {
-        if (res.data.status == 1) {//成功
-          var tmpArr = that.data.articles;
-          // 这一步实现了上拉加载更多
-          tmpArr.push.apply(tmpArr, res.data);
+        console.log(res)
+        
           that.setData({
-            articles: tmpArr
-          })
-          page++;
-        } else {//失败
-          console.log(res.data.info);
-        }
+            articles: res.data
+          })    
       },
       fail: function (e) {
         console.log(e);
       }
     })
   },
-
-
 
   // 选项卡
   filterTab: function (e) {
@@ -139,28 +183,20 @@ Page({
     self.getDataList();
   },
 
-  //加载数据
+  //点击加载数据
   getDataList: function (e) {
     //调用数据接口，获取数据
     var that = this;
-    var pinpai=that.data.pinpai_txt;
-    var pinpai_id = that.data.pinpai_id;
-    
-    var jiage = that.data.jiage_txt;
-    var jiage_id = that.data.jiage_id;
-    
+    var pinpai=that.data.pinpai_txt;   
+    var jiage = that.data.jiage_txt;    
     var xiaoliang = that.data.xiaoliang_txt;
-    var xiaoliang_id = that.data.xiaoliang_id;
     wx.request({
-      url: 'http://192.168.1.103/json/shuju-1.json',
+      url: 'http://192.168.1.104/json/shuju.json',
       method: 'post',
       data: {
-        pinpai: pinpai,
-        pinpai_id: pinpai_id,
-        jiage: jiage,
-        jiage_id: jiage_id,
-        xiaoliang: xiaoliang,
-        xiaoliang_id: xiaoliang_id
+        pinpai: that.data.pinpai_txt,
+        jiage: that.data.jiage_txt,
+        xiaoliang: that.data.xiaoliang_txt,
       },
       
       headers: {
@@ -168,7 +204,7 @@ Page({
       },
       success: function (res) {
      
-        console.log(res.data);
+        console.log(that.data.jiage_txt || that.data.pinpai_txt || that.data.xiaoliang_txt);
         that.setData({
           articles: res.data
           
