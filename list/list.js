@@ -112,7 +112,7 @@ Page({
     //设置默认值
     pg = pg ? pg : 0;
     var that = this;
-    var apiUrl = 'http://192.168.1.104/json/shuju.json';//文章列表接口地址
+    var apiUrl = 'http://192.168.1.101/json/shuju.json';//文章列表接口地址
     var postData = {
       page: pg,//分页标识
       app_version: 1.2,//当前版本，后台根据版本不同给出不同的数据格式
