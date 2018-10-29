@@ -1,6 +1,6 @@
 /**index.wxss**/
 button.form_button{background-color:transparent;padding:0;margin:0;display:inline;position:static;border:0;padding-left:0;padding-right:0;border-radius:0;font-size:0rpx;color:transparent;}
- 
+
  
 button.form_button::after{content:'';width:0;height:0;-webkit-transform:scale(1);transform:scale(1);display:none;background-color:transparent;}
 .nav{
@@ -109,8 +109,8 @@ text-align: center;
   border: gainsboro 1px solid;
 }
  .xia-pc{
-  width: 30rpx;
-  height: 20rpx;
+  width: 20rpx;
+  height: 18rpx;
   position: relative;
  
 
@@ -166,7 +166,7 @@ text-align: center;
 .modal-body{
   position:relative; 
   background: white;
-  height:750rpx;
+  height:760rpx;
   width: 95%; 
   top:250rpx;
   z-index:10000;
@@ -263,7 +263,7 @@ radio .wx-radio-input{
 }
 .kanfangbutton{
   width: 100%;
-  height: 60rpx;
+  height: 70rpx;
 font-size: 26rpx;
 background: #9D2927;
 color: white;
@@ -382,7 +382,7 @@ float: right;
 
 .rexiao .rexiao-bg .tuijian-neirong .aw image{
 	width: 20rpx;
-  height: 28rpx;
+  height: 26rpx;
 	position: relative;
     margin-left: 3px;
     top: 3rpx;
@@ -420,12 +420,16 @@ line-height:49rpx;
 
 }
 .buttons{
-  width: 133rpx;
-  height: 40rpx;
+  width: 130rpx;
+ height: 45rpx;/* 高度设置无效 */
+border-radius: 8rpx;
  display: inline-flex;
   font-size: 18rpx;
-  line-height: 40rpx;
- 
+text-align: center;
+line-height: 45rpx;
+}
+.btn-left{
+  margin-left: 5rpx;
 }
 .ws{
    overflow:hidden; 

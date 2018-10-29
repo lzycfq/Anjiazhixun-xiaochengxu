@@ -15,74 +15,6 @@ Page({
     pageNumber:1,
     pageSize:5
   },
-// onLoad:function(){
-//   var that=this
-//   that.loadarticles();
-// },
-// loadarticles:function(res){
-// var that=this
-// //获取分页信息
-//   var pageNumber = that.data.pageNumber;
-//   var pageSize = that.data.pageSize;
-//   wx:wx.request({
-//     url: 'http://192.168.1.104/json/shuju.json',
-//     data:{
-//       "pageNumber": pageNumber,"pageSize": pageSize
-//     },
-//     header: {
-//       'content-type': 'application/json'
-//     },
-//     method: 'GET',
-//     success: function(res) {
-//       console.log(res)
-//       if(res.resultCode==200){
-//     var articles = that.data.articles
-//     var reqarticles = res.resarticles
-//     if (reqarticles.length==0){
-//         wx.showToast({
-//           title: '没有更多数据',
-//           duration:1000
-//         });
-//       //分页失败
-//       if(pageNumber>1){
-//         that.setData({
-//           pageNumber:--pageNumber
-//         });
-//       }
-//       return
-//     }
-//     that.setData({
-//       articles: articles.concat(reqarticles)
-//     });
-//   }else{
-//     wx:wx.showToast({
-//       title: '加载数据失败',
-//       duration: 1000,
-//     });
-//     if(pageNumber> 1){
-//     that.setData({
-//     pageNumber: --pageNumber
-//   });
-// }
-//   }
-//   console.log(res)
-    
-//     }
-//   })
-// },
-// //下拉刷新
-//   onPullDownRefresh: function () {
-//     var that = this;
-//     //下拉刷新，将pageNumber和pageSize分别设置成1和5，并初始化数据，让数据重新通过loadRoom()获取
-//     that.setData({
-//       pageNumber: 1,
-//       pageSize: 5,
-//       articles: []
-//     })
-//     that.loadRooms();
-//     wx.stopPullDownRefresh();
-//   },
-
 
   //默认加载数据
   onLoad: function (options) {
@@ -191,7 +123,7 @@ Page({
     var jiage = that.data.jiage_txt;    
     var xiaoliang = that.data.xiaoliang_txt;
     wx.request({
-      url: 'http://192.168.1.104/json/shuju.json',
+      url: 'http://192.168.1.101/json/shuju.json',
       method: 'post',
       data: {
         pinpai: that.data.pinpai_txt,

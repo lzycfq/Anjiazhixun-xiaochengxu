@@ -267,7 +267,7 @@ Page({
     // 轮播请求数据
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/lunbo.json',
+      url: 'http://192.168.1.101/json/lunbo.json',
       // url: 'http://www.anjiazhixun.com/json/lunbo.json',
 
       method: 'GET',
@@ -290,7 +290,7 @@ Page({
 
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/biaoti.json',
+      url: 'http://192.168.1.101/json/biaoti.json',
       method: 'GET',
       data: {},
       header: {
@@ -311,7 +311,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/wenlunbo.json',
+      url: 'http://192.168.1.101/json/wenlunbo.json',
       method: 'GET',
       header: {
         'Accept': 'application/json'
@@ -330,7 +330,7 @@ Page({
 
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/datashiping.json',
+      url: 'http://192.168.1.101/json/datashiping.json',
       method: 'GET',
       data: {},
       header: {
@@ -350,7 +350,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/LP.json',
+      url: 'http://192.168.1.101/json/LP.json',
       method: 'GET',
       data: {},
       header: {
@@ -370,7 +370,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/huxing.json',
+      url: 'http://192.168.1.101/json/huxing.json',
       method: 'GET',
       data: {},
       header: {
@@ -390,7 +390,7 @@ Page({
     var sid = options.shopId;
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/tedian.json',
+      url: 'http://192.168.1.101/json/tedian.json',
       method: 'GET',
       data: {
         shopId: 'id'

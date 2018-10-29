@@ -95,7 +95,7 @@ Page({
       wx.login({
         success: function (lgres) {
           wx.request({
-            url: 'http:192.168.1.103/json/shuju-1.json',
+            url: '',
             method: 'POST',
             data: { sousuoname:e.detail.value.sousuoname },
             header: {
@@ -400,7 +400,7 @@ Page({
     this.getLocation();
     var that = this
     wx.request({
-      url: 'http://192.168.1.103/json/data.json',
+      url: 'http://192.168.1.101/json/data.json',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -419,7 +419,7 @@ Page({
   //  特惠房源
     var that = this
     wx.request({
-      url: 'http://192.168.1.103/json/tehui.json',
+      url: 'http://192.168.1.101/json/tehui.json',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -440,7 +440,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.103/json/lunbo.json',
+      url: 'http://192.168.1.101/json/lunbo.json',
       method: 'GET',
       data: {},
       header: {
@@ -491,9 +491,8 @@ Page({
 // 分享
   onShareAppMessage: function () {
     return {
-      title: '安家直讯',
-      path: 'index/index',
-      desc:'安家直讯，抢先挑好房',
+      title: '安家直讯，抢先挑好房',
+      path: 'index/index', 
       success: function (res) {
         wx.showToast({
           title: '分享成功',

@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <!-- 头部 -->
   <view class='nav'>
-  <image src='image/LOGO.PNG'  class='img-logo'></image>
+  <image src='http://www.anjiazhixun.com/img/icon/LOGO.png'  class='img-logo'></image>
   <text class='nav-wenzi'>官方直售，抢先挑好房</text>
   </view>
   <!-- 头部结束 -->
@@ -194,8 +194,8 @@
 <text class='biaoti'>{{item.biaoti}}</text>
 <image class='image-hide' src='{{item.image}}'></image></view></navigator>
 <navigator url='/show/show?id{{item.shangpingID}}'>
-<view class='rexiao-wenzi'>
-<view class='button'><button class='buttons'>{{item.buttonone}}</button><button class='buttons'>{{item.buttontwo}}</button><button class='buttons'>{{item.buttonthree}}</button></view>
+<view class='rexiao-wenzi'> 
+<view class='button'><button class='buttons'>{{item.buttonone}}</button><button class='buttons btn-left'>{{item.buttontwo}}</button><button class='buttons btn-left'>{{item.buttonthree}}</button></view>
 <view  class='ws'>参考价格:约<text class='ws-color'>{{item.price}}</text>元m²起</view>
 <view  class='ws'>楼盘位置:{{item.position}}</view>
 <view  class='ws'>销售产品:{{item.product}}</view>
