@@ -2,10 +2,11 @@
 
   
   "pages": [
+    "show/show",
       "index/index",
     "list/list",
   
-    "show/show",
+   
     "ceshi/ceshi",
    
     

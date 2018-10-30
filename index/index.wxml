@@ -18,25 +18,25 @@
 <view class="plate">
   <view  open-type="switchTab" hover-class="other-navigator-hover" class="plate-item">
      <view class="plate-img" bindtap='show1'>
-   <image src="image/icon-butie.png"></image>
+   <image src="/image/icon-butie.png"></image>
        </view>     
   </view>
   <view  open-type="switchTab" hover-class="other-navigator-hover" class="plate-item plate-items">
      <view class="plate-img" bindtap='show2'>
-       <image src="image/icon-libao.png"></image>
+       <image src="/image/icon-libao.png"></image>
        </view>
 
   </view>
   <view  hover-class="navigator-hover" class="plate-item plate-items">
      <view class="plate-img" bindtap='show3'>
-     <image src="image/icon-zhushou.png"></image>
+     <image src="/image/icon-zhushou.png"></image>
        </view>
        
        
   </view>
   <view  hover-class="navigator-hover" class="plate-item plate-items plate-itemss">
      <view class="plate-img" bindtap='show4'>
-      <image src="image/icon-zixun.png"></image>
+      <image src="/image/icon-zixun.png"></image>
        </view>
   </view>
 </view>
@@ -60,7 +60,7 @@
  <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
 <view><button form-type='submit' class='kanfangbutton'>确定</button></view>
          </form>
-         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='erweima'><image class='nr'  src='/image/erweima.png'></image></view>
          <view class='kanfanghongbao'>领取看房专属补贴！</view>
      </view>
     </view>
@@ -78,7 +78,7 @@
  <view class='label-name'>领取提示：请正确填写您的姓名和手机号码，点击确定后，生成看房补贴二维码，请截图或保存好该二维码，我们有专人跟您联系。</view>
 <view><button form-type='submit' class='kanfangbutton'>确定</button></view>
          </form>
-         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='erweima'><image class='nr'  src='/image/erweima.png'></image></view>
          <view class='kanfanghongbao'>领取看房专属补贴！</view>
      </view>
     </view>
@@ -98,7 +98,7 @@
 
 <view><button form-type='submit' class='kanfangbutton'>确定</button></view>
          </form>
-         <view class='erweima'><image class='nr'  src='image/erweima.png'></image></view>
+         <view class='erweima'><image class='nr'  src='/image/erweima.png'></image></view>
          <view class='kanfanghongbao'>领取看房专属补贴！</view>
      </view>
     </view>
@@ -161,7 +161,6 @@
 <view><label class='label-name'>温馨提示：请正确填写您的姓名和手机号码，点击确定后，非晚间时间23：00-次日7：00，我们一小时内有专人跟您联系</label></view>
 </view>
 </view>
-
 <view><button form-type='submit' class='kanfangbutton'>确定</button></view>
          </form>
          
@@ -174,7 +173,7 @@
 <view class='dsearch'>
 
 <form id='sousuo' bindsubmit='formSousuo'>
-<view class='dingwei'><label  class='cityname'>城市：</label><span class="cityborder">{{currentCity}}<image class='xia-pc' src="image/xia-PC.png"></image></span></view>
+<view class='dingwei'><label  class='cityname'>城市：</label><span class="cityborder">{{currentCity}}<image class='xia-pc' src="/image/xia-PC.png"></image></span></view>
 <view class='sousuo'><label class='loupansearfch'>搜索：</label><input type='text' placeholder='输入搜索内容' name="sousuoname" id='loupanlousuo' />
 <button form-type='submit' class='suosuoajax'>确定</button>
 </view>
@@ -183,8 +182,8 @@
 <!-- 热销楼盘 -->
 <view class="rexiao">
 				<view class="rexiao-bg">
-					<view class="tuijian-neirong"><a style="float: left;"><image class='rexiao-img' src="image/icon-rexiaoloupan.png"></image> <span>热销楼盘  </span></a>
-						<a class="aw" href="">更多楼盘<image src="image/youjiantou-PC.png"></image></a></view>
+					<view class="tuijian-neirong"><a style="float: left;"><image class='rexiao-img' src="/image/icon-rexiaoloupan.png"></image> <span>热销楼盘  </span></a>
+						<a class="aw" href="">更多楼盘<image src="/image/youjiantou-PC.png"></image></a></view>
 				</view>
 			</view>
 <!-- 热销楼盘 -->
@@ -195,7 +194,8 @@
 <image class='image-hide' src='{{item.image}}'></image></view></navigator>
 <navigator url='/show/show?id{{item.shangpingID}}'>
 <view class='rexiao-wenzi'> 
-<view class='button'><button class='buttons'>{{item.buttonone}}</button><button class='buttons btn-left'>{{item.buttontwo}}</button><button class='buttons btn-left'>{{item.buttonthree}}</button></view>
+<!-- <view class='button'><button class='buttons'>{{item.buttonone}}</button><button class='buttons btn-left'>{{item.buttontwo}}</button><button class='buttons btn-left'>{{item.buttonthree}}</button></view> -->
+<view class='button'><view class='buttons'>{{item.buttonone}}</view><view class='buttons btn-left'>{{item.buttontwo}}</view><view class='buttons btn-left'>{{item.buttonthree}}</view></view>
 <view  class='ws'>参考价格:约<text class='ws-color'>{{item.price}}</text>元m²起</view>
 <view  class='ws'>楼盘位置:{{item.position}}</view>
 <view  class='ws'>销售产品:{{item.product}}</view>
@@ -211,8 +211,8 @@
 <!-- 购房特惠 -->
  <view class="rexiao">
 				<view class="rexiao-bg">
-					<view class="tuijian-neirong"><a style="float: left;"><image class='rexiao-img' src="image/icon-tehui.png" style='position:relative;top:8rpx;'></image> <span>热销楼盘  </span></a>
-						<a class="aw" href="">更多楼盘<image src="image/youjiantou-PC.png"></image></a></view>
+					<view class="tuijian-neirong"><a style="float: left;"><image class='rexiao-img' src="/image/icon-tehui.png" style='position:relative;top:8rpx;'></image> <span>热销楼盘  </span></a>
+						<a class="aw" href="">更多楼盘<image src="/image/youjiantou-PC.png"></image></a></view>
 				</view>
 			</view>
 <!-- 购房特惠列表 -->
