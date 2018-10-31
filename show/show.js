@@ -6,7 +6,7 @@ Page({
     flag2: true,
     flag3: true,
     flag4: true,
-    bt:{},
+    bt: {},
     indicatorDots: false, autoplay: true, interval: 3000, duration: 1000,
     curr_id: '',   //当前打开的视频id
     swiperCurrent: 0,
@@ -16,11 +16,11 @@ Page({
       avatarUrl: "",//用户头像
       nickName: "",//用户昵称
     },
-    
-  
+    maskHidden: false,
+
   },
 
-  
+
 
 
 
@@ -40,7 +40,7 @@ Page({
 
 
 
- 
+
   // 模态框
   // 图标模态框弹出
   show1: function () {
@@ -99,7 +99,7 @@ Page({
     that.setData({
       showPage: true,
     })
-  
+
     var telUser = e.detail.value.yuyuephone;
     console.log(telUser)
     if (!/1[3-9]\d{9}/.test(telUser)) {
@@ -115,7 +115,7 @@ Page({
           wx.request({
             url: 'http://test.anjiazhixun.com/home/customer',
             method: 'POST',
-            data: {  "telUser": telUser },
+            data: { "telUser": telUser },
             header: {
               'content-type': 'application/json'
             },
@@ -156,7 +156,7 @@ Page({
         icon: "none"
       })
       return;
-    } else if (nameUser=="") {
+    } else if (nameUser == "") {
       wx.showToast({
         title: '请输入您的姓名',
         duration: 1000,
@@ -169,7 +169,7 @@ Page({
           wx.request({
             url: 'http://test.anjiazhixun.com/home/customer',
             method: 'POST',
-            data: { "nameUser": nameUser, "telUser": telUser},
+            data: { "nameUser": nameUser, "telUser": telUser },
             header: {
               'content-type': 'application/json'
             },
@@ -211,7 +211,7 @@ Page({
         icon: "none"
       })
       return;
-    } else if (maifangcontent="") {
+    } else if (maifangcontent = "") {
       wx.showToast({
         title: '请正确输入您咨询内容',
         duration: 1000,
@@ -267,12 +267,12 @@ Page({
     // 轮播请求数据
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/lunbo.json',
+      url: 'http://www.anjiazhixun.com/json/lunbo.json',
       // url: 'http://www.anjiazhixun.com/json/lunbo.json',
 
       method: 'GET',
       data: {
-       
+
       },
       header: {
         'Accept': 'application/json'
@@ -290,7 +290,7 @@ Page({
 
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/biaoti.json',
+      url: 'http://www.anjiazhixun.com/json/biaoti.json',
       method: 'GET',
       data: {},
       header: {
@@ -300,18 +300,18 @@ Page({
       success: function (res) {
         console.log('2222' + res),
           that.setData({
-          bt: res.data
+            bt: res.data
           })
       }
     })
 
-    
+
 
     // 广告
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/wenlunbo.json',
+      url: 'http://www.anjiazhixun.com/json/wenlunbo.json',
       method: 'GET',
       header: {
         'Accept': 'application/json'
@@ -320,8 +320,8 @@ Page({
       success: function (res) {
         console.log(res),
           that.setData({
-          guanggao:res.data
-       
+            guanggao: res.data
+
           })
       }
     })
@@ -330,7 +330,7 @@ Page({
 
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/datashiping.json',
+      url: 'http://www.anjiazhixun.com/json/datashiping.json',
       method: 'GET',
       data: {},
       header: {
@@ -350,7 +350,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/LP.json',
+      url: 'http://www.anjiazhixun.com/json/LP.json',
       method: 'GET',
       data: {},
       header: {
@@ -358,19 +358,19 @@ Page({
       },
       //成功后的回调
       success: function (res) {
-    console.log(res)
-    that.setData({
-      loupan:res.data
-    })
+        console.log(res)
+        that.setData({
+          loupan: res.data
+        })
 
-       
+
       }
     })
     // 查看户型
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/huxing.json',
+      url: 'http://www.anjiazhixun.com/json/huxing.json',
       method: 'GET',
       data: {},
       header: {
@@ -380,7 +380,7 @@ Page({
       success: function (res) {
         console.log('11111' + res),
           that.setData({
-          anjiahuxing: res.data
+            anjiahuxing: res.data
           })
       }
     })
@@ -390,7 +390,7 @@ Page({
     var sid = options.shopId;
     //网络请求 GET方法
     wx.request({
-      url: 'http://192.168.1.101/json/tedian.json',
+      url: 'http://www.anjiazhixun.com/json/tedian.json',
       method: 'GET',
       data: {
         shopId: 'id'
@@ -403,7 +403,7 @@ Page({
       success: function (res) {
         console.log('11111' + res),
           that.setData({
-          anniuhuxing: res.data
+            anniuhuxing: res.data
           })
       }
     })
@@ -421,47 +421,45 @@ Page({
 
       },
       success: function (res) {
-      let qrcodeurl = res.data;
-      that.setData({
-      qrcodeurl:res.data       
-      })
+        let qrcodeurl = res.data;
+        that.setData({
+          qrcodeurl: res.data
+        })
       }
     })
   },
-     
-onReady:function(){
-    // 绘制canvas
-    var that = this;
-    //1. 请求后端API生成小程序码
-    //that.getQr();
 
+
+  //将canvas转换为图片保存到本地，然后将图片路径传给image图片的src
+  createNewImg:function () {
+    var that = this;
     //2. canvas绘制文字和图片
-    const ctx = wx.createCanvasContext('myCanvas');
+    var ctx = wx.createCanvasContext('mycanvas');
     var title = that.data.bt[0].biaotiname;//标题
     var desc_1 = that.data.loupan[0].loupanwenben;//文本介绍
     var imgPath = that.data.loupan[1].images; //商品图标  
     var basicprofile = '/image/LOGO-1.jpg'; //安家直讯logo
-  // var xcxcode = that.data.qrcodeurl; //小程序分享码
+    // var xcxcode = that.data.qrcodeurl; //小程序分享码
     var xcxcode = '/image/bg.jpg'; //小程序分享码
     //填充背景
     ctx.setFillStyle('#cccccc');
-    ctx.fillRect(0, 0, 240, 360);
+    ctx.fillRect(0, 0, 436, 800);
     ctx.setFillStyle('#ffffff');
-    ctx.fillRect(1, 1, 238, 358);
+    ctx.fillRect(1, 1, 436, 800);
 
     //绘制产品图
-    ctx.drawImage(imgPath, 2, 2, 236, 200);
+    ctx.drawImage(imgPath, 2, 2, 436, 456);
 
     //绘制标题
-    ctx.setFontSize(16);
+    ctx.setFontSize(25);
     ctx.setFillStyle('#000000');
-    ctx.fillText(title, 10, 225);
+    ctx.fillText(title, 10, 495);
 
     //绘制介绍产品
-    ctx.setFontSize(12);
+    ctx.setFontSize(16);
     ctx.setFillStyle('#6F6F6F');
-    ctx.fillText(desc_1, 10, 250);
-    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 270);
+    ctx.fillText(desc_1, 10, 530);
+    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 555);
 
     //绘制一条虚线
 
@@ -469,43 +467,88 @@ onReady:function(){
     ctx.beginPath();
     ctx.setLineWidth(1);
     ctx.setLineDash([2, 4]);
-    ctx.moveTo(10, 285);
-    ctx.lineTo(235, 285);
+    ctx.moveTo(10, 575);
+    ctx.lineTo(435, 575);
     ctx.stroke();
 
     //安家直讯图标
-    ctx.drawImage(basicprofile, 10, 310, 30, 30);
+    ctx.drawImage(basicprofile, 10, 595, 30, 30);
 
     //绘制介绍
-    ctx.setFontSize(11);
+    ctx.setFontSize(13);
     ctx.setFillStyle('#aaaaaa');
-    ctx.fillText('长按扫码查看详情', 47, 318);
-    ctx.fillText('分享自安家直讯', 47, 338);
-    ctx.drawImage(xcxcode, 165, 295, 60, 60);
+    ctx.fillText('长按扫码查看详情', 47, 605);
+    ctx.fillText('分享自安家直讯', 47, 625);
+    ctx.drawImage(xcxcode, 165, 593, 60, 60);
 
     ctx.draw();
 
-
-
+    setTimeout(function () {
+      wx.canvasToTempFilePath({
+        canvasId: 'mycanvas',
+        success: function (res) {
+          var tempFilePath = res.tempFilePath;
+          that.setData({
+            imagePath: tempFilePath,
+            canvasHidden: true
+          });
+        },
+        fail: function (res) {
+          console.log(res);
+        }
+      });
+    }, 200);
   },
-
-  eventSave: function () {
+  //点击保存到相册
+  baocun: function () {
+    var that = this
     wx.saveImageToPhotosAlbum({
-      filePath: this.data.shareImage,
+      filePath: that.data.imagePath,
       success(res) {
-        wx.showToast({
-          title: '保存图片成功',
-          icon: 'success',
-          duration: 2000
+        wx.showModal({
+          content: '图片已保存到相册，赶紧晒一下吧~',
+          showCancel: false,
+          confirmText: '好的',
+          confirmColor: '#333',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定');
+              that.setData({
+                maskHidden: true
+              })
+            }
+          }, fail: function (res) {
+            console.log(11111)
+          }
         })
       }
     })
-},
+  },
+  //点击生成
+  eventDraw: function (e) {
+    var that = this;
+    this.setData({
+      maskHidden: false
+    });
+    wx.showToast({
+      title: '生成海报...',
+      icon: 'loading',
+      duration: 1000
+    });
+    setTimeout(function () {
+      wx.hideToast()
+      that.createNewImg();
+      that.setData({
+        maskHidden: true
+      });
+    }, 1000)
+  },
 
+  
 
   onShareAppMessage: function (res) {
     console.log(this.data.bt[0].biaotiname)
- 
+
     return {
       title: this.data.bt[0].biaotiname,
       path: '/pages/show/show?shopId=' + this.data.id,
@@ -518,5 +561,5 @@ onReady:function(){
     }
   },
 
- 
+
 })

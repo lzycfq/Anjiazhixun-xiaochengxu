@@ -33,12 +33,15 @@
       <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
       <view class="header-modal">分享到朋友圈<label class='knowBtn' bindtap="hide4">x</label></view>
       <view class="modal-content">
-<canvas class='canvasstyle' canvas-id="myCanvas"></canvas>
- 
-<view class='ft'>保存图片到手机相册，分享到朋友圈</view>
-<view class='bctbn'><button  bindtap='eventSave' type="primary" size='mini'>保存到相册</button></view>
+      <view class='imagePathBox' hidden="{{maskHidden == false}}">
+      <image src="{{imagePath}}"  class='shengcheng'></image>
+      <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
+    </view>
+    <view hidden="{{maskHidden == false}}" class="mask"></view> 
+    <view class="canvas-box">
+      <canvas  style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+    </view>
 </view>
-
     </view>
   </view>
 <!-- 视频 -->
