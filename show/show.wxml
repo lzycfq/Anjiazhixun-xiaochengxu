@@ -33,8 +33,8 @@
       <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
       <view class="header-modal">分享到朋友圈<label class='knowBtn' bindtap="hide4">x</label></view>
       <view class="modal-content">
-      <view class='imagePathBox' hidden="{{maskHidden == false}}">
-      <image src="{{imagePath}}"  class='shengcheng'></image>
+      <view class='imagePathBox' hidden="{{maskHidden == false}}" >
+      <image src="{{imagePath}}"  class='shengcheng' mode="aspectFill"></image>
       <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
     </view>
     <view hidden="{{maskHidden == false}}" class="mask"></view> 

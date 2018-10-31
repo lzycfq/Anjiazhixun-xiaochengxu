@@ -434,7 +434,7 @@ Page({
   createNewImg:function () {
     var that = this;
     //2. canvas绘制文字和图片
-    var ctx = wx.createCanvasContext('mycanvas');
+    const  ctx = wx.createCanvasContext('mycanvas');
     var title = that.data.bt[0].biaotiname;//标题
     var desc_1 = that.data.loupan[0].loupanwenben;//文本介绍
     var imgPath = that.data.loupan[1].images; //商品图标  
@@ -448,18 +448,18 @@ Page({
     ctx.fillRect(1, 1, 436, 800);
 
     //绘制产品图
-    ctx.drawImage(imgPath, 2, 2, 436, 456);
+    ctx.drawImage(imgPath, 2, 2, 436, 396);
 
     //绘制标题
     ctx.setFontSize(25);
     ctx.setFillStyle('#000000');
-    ctx.fillText(title, 10, 495);
+    ctx.fillText(title, 10, 435);
 
     //绘制介绍产品
-    ctx.setFontSize(16);
+    ctx.setFontSize(14);
     ctx.setFillStyle('#6F6F6F');
-    ctx.fillText(desc_1, 10, 530);
-    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 555);
+    ctx.fillText(desc_1, 10, 465);
+    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 485);
 
     //绘制一条虚线
 
@@ -467,19 +467,19 @@ Page({
     ctx.beginPath();
     ctx.setLineWidth(1);
     ctx.setLineDash([2, 4]);
-    ctx.moveTo(10, 575);
-    ctx.lineTo(435, 575);
+    ctx.moveTo(10, 495);
+    ctx.lineTo(435, 495);
     ctx.stroke();
 
     //安家直讯图标
-    ctx.drawImage(basicprofile, 10, 595, 30, 30);
+    ctx.drawImage(basicprofile, 10, 515, 30, 30);
 
     //绘制介绍
     ctx.setFontSize(13);
     ctx.setFillStyle('#aaaaaa');
-    ctx.fillText('长按扫码查看详情', 47, 605);
-    ctx.fillText('分享自安家直讯', 47, 625);
-    ctx.drawImage(xcxcode, 165, 593, 60, 60);
+    ctx.fillText('长按扫码查看详情', 47, 525);
+    ctx.fillText('分享自安家直讯', 47, 545);
+    ctx.drawImage(xcxcode, 165, 510, 60, 60);
 
     ctx.draw();
 
@@ -497,7 +497,7 @@ Page({
           console.log(res);
         }
       });
-    }, 200);
+    }, 1000);
   },
   //点击保存到相册
   baocun: function () {
