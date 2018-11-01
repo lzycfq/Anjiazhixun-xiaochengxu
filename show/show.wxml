@@ -93,10 +93,8 @@
 <!-- 户型查看 -->
 <view class='huxingall'>
 <block wx:if="{{true}}">
-<swiper class="swiper-huxing" autoplay="true" interval="5000" 
-
-duration="1000" current="{{swiperCurrent}}" bindchange="swiperChange">
-<block wx:for="{{anjiahuxing}}" wx:key="item">
+<swiper class="swiper-huxing" interval="5000"  duration="1000" current="{{current}}" >
+<block wx:for="{{swiper}}" wx:key="item">
 <swiper-item>            
 <view class='anjia-table'>
 <view class='table-nr'>
@@ -117,8 +115,8 @@ duration="1000" current="{{swiperCurrent}}" bindchange="swiperChange">
   </block>      
   </swiper>
   </block>        
-<view class='swiper-left' bindchange="swiperChange"><image src='/image/left-pc.png'></image></view>
-<view class='swiper-right' bindchange="swiperChange"><image src='/image/right-pc.png'></image></view>
+<view class='swiper-left' bindtap="prevImg"><image src='/image/left-pc.png'></image></view>
+<view class='swiper-right' bindtap="nextImg"><image src='/image/right-pc.png'></image></view>
 <!-- </block> -->
 </view>
 <!-- 拨打电话 -->
@@ -206,13 +204,13 @@ name="maifangcontent" class='maifangcontent'></textarea></view>
 
 
 <view class="modal-box" hidden="{{flag3}}">
-    <view class="modal-body-1" wx:for="{{anniuhuxing}}" wx:key="item">
+    <view class="modal-body-1" >
       <!-- <button class="knowBtn" bindtap="hide">我知道了</button> -->
-      <view class="header-modal">{{item.huxingleixing}}<label class='knowBtn' 
+      <view class="header-modal">查看户型<label class='knowBtn' 
 
 bindtap="hide3">x</label></view>
     <swiper class="swiper-huxing"  autoplay="true" interval="5000" duration="1000">
-<block>
+<block wx:for="{{anniuhuxing}}" wx:key="item">
 <swiper-item >            
        <view class="modal-content-1">
         <view class='huxingtedian'>户型面积:{{item.mianji}}m²</view>

@@ -1,15 +1,16 @@
-<block wx:if="{{boolean==true}}">
+<view class='ceshi_swiper'>
+    <swiper class='read_swiper' indicator-dots='{{swiper.indicatorDots}}' autoplay="{{swiper.autoplay}}" interval="{{swiper.interval}}" duration="{{swiper.duration}}" current="{{swiper.current}}">
+      <block wx:for="{{swiper.imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='ceshi_next' bindtap='prevImg'>
+      <text class='icon iconfont icon-you'></text>
+    </view>
+    <view class='ceshi_prew' bindtap='nextImg'>
+      <text class='icon iconfont icon-zuo'></text>
+    </view>
+  </view>
 
-    <block wx:for="{{arr}}">
-
-        <view class="bg_black">内容：{{item}}</view>
-
-    </block>
-
-</block>
-
-<block wx:elif="{{boolean==false}}">
-
-    <view class="bg_red">无内容</view>
-
-</block>

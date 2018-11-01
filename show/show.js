@@ -17,7 +17,8 @@ Page({
       nickName: "",//用户昵称
     },
     maskHidden: false,
-
+    current: 0,
+    swiper: [],
   },
 
 
@@ -29,12 +30,19 @@ Page({
       phoneNumber: app.globalData.phoneNumber,
     })
   },
+  //轮播点击切换
 
-
-  //轮播图的切换事件
-  swiperChange: function (e) {
+  prevImg: function () {
+    if (this.data.current == 0) return
     this.setData({
-      swiperCurrent: e.detail.current
+      current: --this.data.current,
+    })
+  },
+
+  nextImg: function () {
+    if (this.data.current == this.data.swiper.length -1) return
+    this.setData({
+      current: ++this.data.current,
     })
   },
 
@@ -304,9 +312,6 @@ Page({
           })
       }
     })
-
-
-
     // 广告
     var that = this
     //网络请求 GET方法
@@ -380,7 +385,7 @@ Page({
       success: function (res) {
         console.log('11111' + res),
           that.setData({
-            anjiahuxing: res.data
+            swiper: res.data
           })
       }
     })

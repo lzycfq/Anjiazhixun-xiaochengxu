@@ -456,7 +456,7 @@ height:65%;
   background: white;
   height:750rpx;
   width:100%; 
-  top:347rpx;
+  top:359rpx;
   overflow: hidden;
   margin: 0 auto;}
 .modal-body-2{
@@ -481,7 +481,7 @@ height:65%;
 .modal-body-1{
     position:relative; 
   background: white;
-  height:830rpx;
+  height:850rpx;
   width:100%; 
   top:262rpx;
   margin: 0 auto;
@@ -490,7 +490,7 @@ height:65%;
   width: 100%;
   height: 70rpx;
   text-align: center;
-  background: #9D2927;
+  background:#9D2927;
   color: white;
   line-height: 70rpx;
 }
@@ -599,7 +599,7 @@ color: white;
 /* 买房助手 */
 .maifangcontent{
   width: 303rpx;
-  height: 150rpx;
+  height: 130rpx;
   font-size: 25rpx;
   position: relative;
   top: 5rpx;
