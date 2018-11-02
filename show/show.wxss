@@ -25,20 +25,20 @@
 .anjia-bag .anjia-border{
   width: 97%;
   height:100rpx;
-  position: relative;
-  top: 5px;
-  float: right;
-
+ margin-top: 13rpx;
+float: right;
+overflow: hidden;
 }
 .anjia-bag .anjia-border .anjia-nr-title{
   color:#9D2927;
   font-size: 45rpx;
-  position: relative;
-  top: 5rpx;
+float: left;
+
+
+ 
 }
 .anjia-bag .anjia-border  .buttons{
-  display: inline-flex;
-  width: 157rpx;
+  width: 155rpx;
   height: 50rpx;
   font-size: 25rpx;
   line-height: 50rpx;
@@ -47,16 +47,16 @@
 text-overflow:ellipsis;
 white-space: nowrap;
 color: black;
+display: inline-flex;
  
 }
 .anjia-bag .anjia-border .fx {
- float: right;
+
   width: 60rpx;
   height: 50rpx;
   font-size: 20rpx;
   line-height: 50rpx;
-  position: relative;
-  top: 9rpx;
+float: right;
   border-top-left-radius:25rpx;
    border-top-right-radius:0rpx;
    border-bottom-right-radius:0rpx;
@@ -73,7 +73,7 @@ color: black;
 .anjia-bag .anjia-border .c {
  width: 98%;
  position: relative;
- top: 10rpx;
+ top: 7rpx;
  overflow: hidden;
 text-overflow: ellipsis;
 white-space: nowrap;
@@ -92,11 +92,11 @@ white-space: nowrap;
 /* canvas绘制css */
 .shengcheng{
   position: relative;
-   top: 50rpx;
+   top: 10rpx;
   margin:0 auto;
-   margin-bottom:80rpx;
+   margin-bottom:30rpx;
    width:100%; 
-   height: 810rpx;
+   height: 860rpx;
    box-shadow:1px 2px 2px #ccc;
    
 }
@@ -107,6 +107,10 @@ white-space: nowrap;
   position: relative;
   top: 50rpx;
   text-align: center;
+}
+.baocun{
+  background: #EB3F2F;
+  color: white;
 }
 /* 视频 */
 

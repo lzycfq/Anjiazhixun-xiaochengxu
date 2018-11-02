@@ -12,18 +12,19 @@
 
 <view class='anjia-bag'>
 <view class="anjia-border">
-<view wx:for='{{bt}}' wx:for-item="bt" wx:for-index="index"  wx:key="{{bt.id}}"><label class='anjia-nr-title' >{{bt.biaotiname}}</label><button class='buttons'>{{bt.button1}}</button><button class='buttons'>{{bt.button2}}</button><button class='buttons'>{{bt.button3}}</button>
+<view wx:for='{{bt}}' wx:for-item="bt" wx:for-index="index"  wx:key="{{bt.id}}"><view class='anjia-nr-title' >{{bt.biaotiname}}</view><button class='buttons'>{{bt.button1}}</button><button class='buttons'>{{bt.button2}}</button><button class='buttons'>{{bt.button3}}</button>
 <view class='fx'  catchtap='show4' ><image bind:tap="eventDraw"  src='/image/share.png'></image></view>
 </view>   
- <swiper class='c' indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="true">
+ <swiper class='c' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true" circular="true">
   <block wx:for="{{guanggao}}" wx:key="item">
     <swiper-item>
       <text class="itme_text">{{item.listwenzi}}</text>
     </swiper-item>
   </block>
 </swiper>
+<view style="clear:both;height:0"></view>
 </view>
+
 </view>
 
 <!-- 
@@ -39,7 +40,7 @@
     </view>
     <view hidden="{{maskHidden == false}}" class="mask"></view> 
     <view class="canvas-box">
-      <canvas  style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+      <canvas  style="width: 375px;height: 557px;position:fixed;top:9999px" canvas-id="mycanvas"/>
     </view>
 </view>
     </view>

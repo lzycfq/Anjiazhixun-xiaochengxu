@@ -40,7 +40,8 @@ Page({
   },
 
   nextImg: function () {
-    if (this.data.current == this.data.swiper.length -1) return
+    if (this.data.current == this.data.swiper.length -1)
+     return
     this.setData({
       current: ++this.data.current,
     })
@@ -442,44 +443,43 @@ Page({
     // var xcxcode = that.data.qrcodeurl; //小程序分享码
     var xcxcode = '/image/bg.jpg'; //小程序分享码
     //填充背景
-    ctx.setFillStyle('#cccccc');
-    ctx.fillRect(0, 0, 436, 800);
+  
     ctx.setFillStyle('#ffffff');
-    ctx.fillRect(1, 1, 436, 800);
+    ctx.fillRect(1, 1, 436, 527);
 
     //绘制产品图
-    ctx.drawImage(imgPath, 2, 2, 436, 396);
+    ctx.drawImage(imgPath, 2, 2, 436, 356);
 
     //绘制标题
     ctx.setFontSize(25);
     ctx.setFillStyle('#000000');
-    ctx.fillText(title, 10, 435);
+    ctx.fillText(title, 10, 395);
 
     //绘制介绍产品
     ctx.setFontSize(14);
     ctx.setFillStyle('#6F6F6F');
-    ctx.fillText(desc_1, 10, 465);
-    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 485);
+    ctx.fillText(desc_1, 10, 425);
+    ctx.fillText('安家直讯，为你抢先挑好房！', 10, 445);
 
     //绘制一条虚线
 
-    ctx.strokeStyle = 'blue';
+    ctx.strokeStyle = 'gray';
     ctx.beginPath();
     ctx.setLineWidth(1);
     ctx.setLineDash([2, 4]);
-    ctx.moveTo(10, 495);
-    ctx.lineTo(435, 495);
+    ctx.moveTo(10, 465);
+    ctx.lineTo(435, 465);
     ctx.stroke();
 
     //安家直讯图标
-    ctx.drawImage(basicprofile, 10, 515, 30, 30);
+    ctx.drawImage(basicprofile, 10, 485, 30, 30);
 
     //绘制介绍
     ctx.setFontSize(13);
     ctx.setFillStyle('#aaaaaa');
-    ctx.fillText('长按扫码查看详情', 47, 525);
-    ctx.fillText('分享自安家直讯', 47, 545);
-    ctx.drawImage(xcxcode, 165, 510, 60, 60);
+    ctx.fillText('长按扫码查看详情', 47, 495);
+    ctx.fillText('分享自安家直讯', 47, 515);
+    ctx.drawImage(xcxcode, 165, 480, 60, 45);
 
     ctx.draw();
 
