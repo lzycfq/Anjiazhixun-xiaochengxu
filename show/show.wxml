@@ -209,7 +209,7 @@ name="maifangcontent" class='maifangcontent'></textarea></view>
       <view class="header-modal">查看户型<label class='knowBtn' 
 
 bindtap="hide3">x</label></view>
-    <swiper class="swiper-huxing"  autoplay="true" interval="5000" duration="1000">
+    <swiper class="swiper-huxing"  interval="5000" duration="1000" current='{{current}}'>
 <block wx:for="{{anniuhuxing}}" wx:key="item">
 <swiper-item >            
        <view class="modal-content-1">
@@ -220,6 +220,9 @@ bindtap="hide3">x</label></view>
  </swiper-item>
   </block>      
   </swiper>
+
   </view>
+  <view class='swiper-left-1' bindtap="prevImghx"><image src='/image/left-pc.png'></image></view>
+ <view class='swiper-right-1' bindtap="nextImghx"><image src='/image/right-pc.png'></image></view>
   </view>
   

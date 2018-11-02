@@ -30,7 +30,7 @@ Page({
       phoneNumber: app.globalData.phoneNumber,
     })
   },
-  //轮播点击切换
+  //查看户型（1）轮播点击切换
 
   prevImg: function () {
     if (this.data.current == 0) return
@@ -45,7 +45,21 @@ Page({
       current: ++this.data.current,
     })
   },
+  //查看户型（2）轮播点击切换
 
+  prevImghx: function () {
+    if (this.data.current == 0) return
+    this.setData({
+      current: --this.data.current,
+    })
+  },
+
+  nextImghx: function () {
+    if (this.data.current == this.data.swiper.length - 1) return
+    this.setData({
+      current: ++this.data.current,
+    })
+  },
 
 
 
@@ -275,7 +289,7 @@ Page({
     // 轮播请求数据
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/lunbo.json',
+      url: 'http://192.168.1.102/json/lunbo.json',
       // url: 'http://www.anjiazhixun.com/json/lunbo.json',
 
       method: 'GET',
@@ -298,7 +312,7 @@ Page({
 
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/biaoti.json',
+      url: 'http://192.168.1.102/json/biaoti.json',
       method: 'GET',
       data: {},
       header: {
@@ -316,7 +330,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/wenlunbo.json',
+      url: 'http://192.168.1.102/json/wenlunbo.json',
       method: 'GET',
       header: {
         'Accept': 'application/json'
@@ -335,7 +349,7 @@ Page({
 
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/datashiping.json',
+      url: 'http://192.168.1.102/json/datashiping.json',
       method: 'GET',
       data: {},
       header: {
@@ -355,7 +369,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/LP.json',
+      url: 'http://192.168.1.102/json/LP.json',
       method: 'GET',
       data: {},
       header: {
@@ -375,7 +389,7 @@ Page({
     var that = this
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/huxing.json',
+      url: 'http://192.168.1.102/json/huxing.json',
       method: 'GET',
       data: {},
       header: {
@@ -395,7 +409,7 @@ Page({
     var sid = options.shopId;
     //网络请求 GET方法
     wx.request({
-      url: 'http://www.anjiazhixun.com/json/tedian.json',
+      url: 'http://192.168.1.102/json/tedian.json',
       method: 'GET',
       data: {
         shopId: 'id'
@@ -412,26 +426,7 @@ Page({
           })
       }
     })
-    // 生成小程序码
-    var thta = this;
-    wx.request({
-      url: '',
-      method: "post",
-      data: {
-        page: "show/show",
-        scene: "1234&123",
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-
-      },
-      success: function (res) {
-        let qrcodeurl = res.data;
-        that.setData({
-          qrcodeurl: res.data
-        })
-      }
-    })
+    
   },
 
 
