@@ -30,7 +30,7 @@ Page({
       phoneNumber: app.globalData.phoneNumber,
     })
   },
-  //查看户型（1）轮播点击切换
+  // //查看户型（1）轮播点击切换
 
   prevImg: function () {
     if (this.data.current == 0) return
@@ -46,7 +46,7 @@ Page({
       current: ++this.data.current,
     })
   },
-  //查看户型（2）轮播点击切换
+  // //查看户型（2）轮播点击切换
 
   prevImghx: function () {
     if (this.data.current == 0) return
@@ -61,7 +61,6 @@ Page({
       current: ++this.data.current,
     })
   },
-
 
 
   // 模态框

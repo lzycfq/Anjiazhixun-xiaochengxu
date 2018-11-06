@@ -300,7 +300,7 @@ margin: 0 auto;
   
   float: left;
    margin-top: 10rpx;
-   line-height:58rpx;
+   line-height:60rpx;
    overflow: hidden;
 }
 .anjia-table .table-nr .left  .table-wenzi{
@@ -312,7 +312,7 @@ margin: 0 auto;
   width: 53%;
  height:170rpx;
    margin-top: 10rpx;
-   line-height:58rpx;
+   line-height:60rpx;
    overflow: hidden;
   float: right;
 }
@@ -409,7 +409,7 @@ border-radius: 0px;
   overflow: hidden;
 }
 .anjia-boda{
-  width: 331rpx;
+  width: 332rpx;
   height: 100%;
   float: left;
   background: #9D2927;
